@@ -1,7 +1,7 @@
 # WEB-PetShop
 Trabalho para a disciplina SCC0219 - Introduction to Web Development - 2020
 
-# A Pet Shop
+## A Pet Shop
 Group:  Luís Peres, Marcelo Duchene, Michelle Wingter
    
 A pet store or pet shop is a retail business which sells different kinds of animals to the public. A variety of animal supplies and pet accessories are also sold in pet shops. The products sold include: food, treats, toys, collars, leashes, cat litter, cages and aquariums. Some pet stores provide engraving services for pet tags, which have the owner’s contact information in case the pet gets lost.
