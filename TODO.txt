@@ -1,0 +1,46 @@
+TODO
+
+	
+	Homepage with a description of services/products offered and login area (any type of user) 
+
+	customer:
+	
+	
+		Customers can schedule a web time for services, using a calendar:
+The calendar should display free slot windows for use. Customers cannot cancel a time.
+The calendar should cover a minimum of 10 weeks with (at least) 10 slots per day.
+Busy hours show the name and photo of the service and the animal and name of the customer who made the reservation.
+Each free slot must show a service or empty. It is possible to have more than one service per slot. But I recommend doing only one service per slot.
+
+		schedule time, buy a product, edit your registration, register/list animals 
+		Calendar screen of the month and time list to select a service.
+		Screen with details of a registered animal and information such as its current situation (how many services are reserved for it and the total cost). 
+	administrator
+	
+	
+		Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin with password admin.
+Customers are users who access the system for animal registration, service schedule and purchase of products.
+The admin log includes, at least: name, id, photo, phone, email.
+Each customer's record includes, at least: name, id, address, photo, phone, email
+Each pet is registered under an owner (customer). It includes name, id, photo, race, age.
+Product records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold. Products can be, for example, dog/cat food, houses, toy bones, collars, etc.
+Registration services include, at least: name, id, photo, description, price.
+
+		Screen with actions: register administrators / customers / products / services / etc) in a menu
+		Screen for managing services, where you can associate services with time slots, release reserved slots, etc.
+		Product Inventory Management Screen (Add, Update, Delete, Consult)
+		
+		
+		
+
+
+
+	The functionalities you are going to implement (when talking about them, link the corresponding Html files).
+	
+	The information you are going to save in the server (no need to decide how that information will be saved).
+	
+	A diagram showing how users navigate the site.
+
+
+
+	
