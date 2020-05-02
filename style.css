@@ -1,0 +1,18 @@
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+.navbar1, .footer {
+    background-color: rgb(254, 213, 17);
+    font-weight: bold;
+}
+
+.navbar2{
+    background-color: rgb(4, 0, 255);
+}
+
