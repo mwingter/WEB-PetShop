@@ -1,3 +1,4 @@
+/* inicio index */
 body {
     padding-top: 54px;
 }
@@ -19,7 +20,9 @@ body {
 .card-body{
     background-color: rgb(228, 226, 226);
 }
+/* fim index */
 
+/* inicio register */
 /*Profile Pic Start*/
 .picture-container{
     position: relative;
@@ -57,4 +60,51 @@ body {
     
 }
 /*Profile Pic End*/
+/* fim register */
+
+/* inicio servicos */
+.img-service{
+    width: 380px;
+}
+/* fim servicos */
+
+
+/* inicio produtos */
+ol, ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+ol {
+    color: blue;
+}
+
+.cd-filter{
+  
+    border: groove;
+    background-color: rgb(245, 241, 241);
+    padding: 30px;
+}
+
+.search{
+    position: relative;
+    text-align: center;
+    margin: 10px;
+}
+
+.card-title{
+    font-size: 18px;
+    height: 30px;
+    text-align: center;
+}
+
+.img-prod {
+    width: 200px;
+    height: 200px;
+}
+
+.card-body{
+    background-color: rgb(228, 226, 226);
+}
+/* fim produtos */
 
