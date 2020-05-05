@@ -96,13 +96,13 @@
 
 
             <!-- Heading Row -->
-            <div class="row my-4">
+            <div class="row my-4 justify-content-center">
                 <div class="col-lg-8">
-                    <div>
+                    <div class="container rounded-lg bg-light p-3">
                         <div class="wrapper" id="formlogin">
-                            <h1>Login<br/></h1><br/>
+                            <h1 class="text-center text-secondary">Login<br/></h1><br/>
+                            <p class="hint-text text-secondary">Para fazer seu login, digite seu email e senha.</p>
 
-                            <h2 class="form-signin-heading">Digite seu E-mail e senha<br/></h2><br/>
                             <input id="email" type="email" class="form-control" name="email" placeholder="email@email.com" required="" autofocus="" /pattern=".+.">
                                    <br/>
                             <input id="pass" type="password" class="form-control" name="pass" placeholder="Password" required="" minlength="8" />
@@ -117,12 +117,14 @@
                             </script>
 
                             <button id= "btnlogin" class="btn btn-lg btn-primary btn-block" onclick="clickAlert()">Login</button>
-
-
-
-                            <a href="register.html"><button id= "register" class="btn btn-lg btn-primary btn-block">Cadastrar</button></a>
+                            <br/>
+                            <div class="text-center">
+                                <a href="register.html"><button id= "register" class="btn btn-sm btn-secondary btn-block">Cadastrar</button></a>
+                            
+                            <div class="wrapper" id="btnlogout"><button id= "btnlogout" class="btn btn-sm btn-secondary btn-block mt-2">Logout</button></div>
+                            </div>
+                            
                         </div>
-                        <div class="wrapper" id="btnlogout"><button id= "btnlogout" class="btn btn-lg btn-primary btn-block">Logout</button></div>
                     </div>
                 </div>
                 
