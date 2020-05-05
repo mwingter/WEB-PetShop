@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <title>Aunimal!</title>
+        <link rel="icon" href="images/ico-aunimal3-semfundo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+
+        <link rel="stylesheet" href="style.css">
+
+
+    </head>
+
+    <body>
+
+
+        <!-- Menu -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar1">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/ico-aunimal3-semfundo.png" class="img-responsive" alt="Logo" height="40" ></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" id="logged">
+                            <a class="nav-link text-dark" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="register.html">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="produtos.html">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="servicos.html">Serviços</a>
+                        </li>
+
+
+                    </ul>
+                    <div class="container-fluid justify-content-end">
+                        <class class="nav-item ">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </class>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top-2 navbar2 ">
+            <div class="container ">
+
+                <div class="collapse navbar-collapse " id="navbarResponsive">
+                    <ul class="nav nav-pills nav-fill">
+                        <li class="nav-item" id="logged">
+                            <a class="nav-link text-light" href="produtos.html" >Cachorros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="produtos.html">Gatos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light"  href="produtos.html">Pássaros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="produtos.html">Roedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light"  href="produtos.html">Peixes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light"  href="produtos.html">Promoções</a>
+                        </li>                      
+                    </ul>                   
+                </div>             
+
+            </div>
+        </nav>
+
+
+
+
+
+
+
+        <div class="container">
+
+
+
+            <!-- Heading Row -->
+            <div class="row my-4 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="container rounded-lg bg-light p-3">
+                        <div class="wrapper" id="formlogin">
+                            <h1 class="text-center text-secondary">Login<br/></h1><br/>
+                            <p class="hint-text text-secondary">Para fazer seu login, digite seu email e senha.</p>
+
+                            <input id="email" type="email" class="form-control" name="email" placeholder="email@email.com" required="" autofocus="" /pattern=".+.">
+                                   <br/>
+                            <input id="pass" type="password" class="form-control" name="pass" placeholder="Password" required="" minlength="8" />
+                            <br/>
+                            <div class="g-recaptcha" data-sitekey="6LdtsDIUAAAAABWrnX53cqwLPd6Et0NCGhNV1lhI"></div>
+
+                            <script>
+                                function clickAlert() {
+                                    alert("E-mail ou senha invalidos");
+
+                                }
+                            </script>
+
+                            <button id= "btnlogin" class="btn btn-lg btn-primary btn-block" onclick="clickAlert()">Login</button>
+                            <br/>
+                            <div class="text-center">
+                                <a href="register.html"><button id= "register" class="btn btn-sm btn-secondary btn-block">Cadastrar</button></a>
+                            
+                            <div class="wrapper" id="btnlogout"><button id= "btnlogout" class="btn btn-sm btn-secondary btn-block mt-2">Logout</button></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+
+
+  <!-- Footer -->
+        <footer class="py-5  footer">
+            <div class="container ">
+			<p class="m-0 text-center text-dark">Luís Filipe Vasconcelos Peres NUSP: 10310641</p>
+                <p class="m-0 text-center text-dark">Marcelo Duchene NUSP: 8596351</p>                
+                <p class="m-0 text-center text-dark">Michelle Wingter da Silva NUSP: 10783243</p>
+            </div>
+
+        </footer>
+
+        
+                <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    
+        
+    </body>
+
+</html>
