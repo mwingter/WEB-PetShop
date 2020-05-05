@@ -1,5 +1,7 @@
 # WEB-PetShop
-Trabalho para a disciplina SCC0219 - Introduction to Web Development - 2020
+Project for the course SCC0219 - Introduction to Web Development - 2020
+
+Website: aunimal.pet
 
 ### Group:  Luís Peres, Marcelo Duchene, Michelle Wingter
 
