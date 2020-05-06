@@ -21,5 +21,3 @@ Michelle Wingter da Silva NUSP: 10783243
 -images/                        pasta das imagens do site
 -style.css                      arquivo com os estilos do site
 
-# Extras explicações:
-(se houver)
