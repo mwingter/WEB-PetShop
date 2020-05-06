@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="style.css">
 
@@ -88,37 +89,77 @@
         </nav>
 
 
+        <div class="container-fluid ">
+            <!--Menu admin -->
+            <div id="wrapper">
 
-<!--Menu admin -->
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand">
+                            <a href="#">
+                                Administrador
+                            </a>
+                        </li>
+                        <li>
+                            <img src="images/default-avatar.png" class="picture-src rounded-circle w-50 m-2">
+                        </li>
+                        <li>
+                            <a href="#">Register Admin</a>
+                        </li>
+                        <li>
+                            <a href="#">Manage Costumers</a>
+                        </li>
+                        <li>
+                            <a href="#">Manage Products</a>
+                        </li>
+                        <li>
+                            <a href="#">Manage Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Others Services</a>
+                        </li>
 
-
+                    </ul>
+                </div>
+                <!-- /#sidebar-wrapper -->
         
-        <div>
-            
-            
-            <button>Register Admin</button>
-            
-            <button>Costumers</button>
-            
-            <button>Manage Products</button>
-            
-            <button>Manage Services</button>
-            
-            <button>Others Services</button>
-            
-            
-            
-        </div>
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#menu-toggle" class="btn btn-default border btn-dark" id="menu-toggle"> = </a>
+
+                                <h1 class="text-center">Página do Administrador</h1>
+                                <p>Page to manage the administrator itens.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /#page-content-wrapper -->
+        
+            </div>
+            <!-- /#wrapper -->
+
+            <script>
+                $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                });
+            </script>
            
 
 <!-- Fim Menu admin -->
+        </div>
+            
 
 
 
-    </div>
     <!-- /.container -->
 
-    <!-- Footer -->
+    <!-- Footer 
     <footer class="py-5  footer">
         <div class="container ">
             <p class="m-0 text-center text-dark">Luís Filipe Vasconcelos Peres NUSP: 10310641</p>
@@ -126,11 +167,10 @@
             <p class="m-0 text-center text-dark">Michelle Wingter da Silva NUSP: 10783243</p>
         </div>
 
-    </footer>
+    </footer>-->
 
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
