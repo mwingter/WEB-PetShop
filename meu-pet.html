@@ -4,6 +4,12 @@
     <title>Aunimal!</title>
     <link rel="icon" href="images/ico-aunimal3-semfundo.png" />
 
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+    integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"
+  ></script>
+
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -115,17 +121,17 @@
               </h2>
             </div>
             <div id="formcadastro">
-              <h1 class="text-secondary">
-                Cadastre seu pet
+              <h1 class="text-secondary p-2 text-uppercase">
+                Cadastre seu Pet
               </h1>
               <form class="form-horizontal" onsubmit="return clickAlert()">
                 <fieldset>
                   <div>
                     <div class="container">
                       <div class="picture-container">
-                        <div class="picture">
+                        <div class="picture rounded-circle">
                           <img
-                            src="images/default-avatar.png"
+                            src="images/default_pet.jpg"
                             alt="Carregue uma foto"
                             class="picture-src"
                             id="wizardPicturePreview"
@@ -226,11 +232,8 @@
                     }
                 </script>
 
-                <div class="row">
-                    <button id="btnregister" 
-                    class="btn btn-lg btn-primary btn-block">
-                        Cadastrar
-                    </button>    
+                <div class="row mt-5">
+                    <button id="btnregister" class="btn btn-lg btn-primary btn-block">Cadastrar</button>    
                 </div>
                 
 
@@ -257,12 +260,8 @@
       </div>
     </footer>
 
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
-      integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Tether, then Bootstrap JS. -->
+   
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
       integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
