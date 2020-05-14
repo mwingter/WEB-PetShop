@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    
+    <title>Registro de PET</title>
+
+</head>
+<body>
+        <!-- Conteudo -->
+        <div class="container">
+            <!-- CADASTRO DE PET -->
+            <div class="row my-4 justify-content-center">
+              <div class="col-lg-8">
+                <div class="form-group container rounded-lg bg-light p-4">
+                  <div id="csucesso">
+                    <h2 hidden="">
+                      Cadastro feito com sucesso!
+                    </h2>
+                  </div>
+                  <div id="formcadastro">
+                    <h1 class="text-secondary p-2 text-uppercase">
+                      Cadastre seu Pet
+                    </h1>
+                    <form class="form-horizontal" onsubmit="return clickAlert()">
+                      <fieldset>
+                        <div>
+                          <div class="container">
+                            <div class="picture-container">
+                              <div class="picture rounded-circle">
+                                <img
+                                  src="images/default_pet.jpg"
+                                  alt="Carregue uma foto"
+                                  class="picture-src"
+                                  id="wizardPicturePreview"
+                                />
+                                <input type="file" id="wizard-picture" />
+                              </div>
+                              <h6>
+                                Selecione uma foto
+                              </h6>
+                            </div>
+                          </div>
+                        </div>
+      
+                        <script>
+                          $(document).ready(function () {
+                            $("#wizard-picture").change(function () {
+                              readURL(this);
+                            });
+                          });
+                          function readURL(input) {
+                            if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+      
+                              reader.onload = function (e) {
+                                $("#wizardPicturePreview")
+                                  .attr("src", e.target.result)
+                                  .fadeIn("slow");
+                              };
+                              reader.readAsDataURL(input.files[0]);
+                            }
+                          }
+                        </script>
+      
+                        <label for="nome">Nome:</label>
+                        <input
+                          id="name"
+                          class="form-control"
+                          type="text"
+                          name="nome"
+                          placeholder="ex: Rex da Silva, Totó Rodrigues"
+                          title="O nome deve conter apenas letras"
+                          required pattern="[a-zA-ZÀ-ž\s]+"
+                        />
+      
+                        <div class="row">
+                            <div class="col">
+                              <label for="idade">Idade:</label>
+                              <input id="my-input" 
+                              class="form-control text-secondary" 
+                              type="text" 
+                              name="idade"
+                              required=""
+                              id="idade"
+                              placeholder="ex: 1 ano 3 meses"
+                              >
+                            </div>
+                            <div class="col">
+                                <label for="sexo">Sexo:</label>
+                                <select id="sexo" class="custom-select" required="">
+                                  <option selected>Escolha um sexo...</option>
+                                  <option value="1">Fêmea</option>
+                                  <option value="2">Macho</option>
+                                </select>
+                            </div>
+                        </div>
+      
+                        <div class="row">
+                            <div class="col">
+                              <label for="especie">Espécie:</label>
+                              <select id="especie" class="custom-select">
+                                  <option selected>Escolha uma espécie...</option>
+                                  <option value="1">Cachorro</option>
+                                  <option value="2">Gato</option>
+                                  <option value="3">Pássaro</option>
+                                  <option value="4">Peixe</option>
+                                  <option value="5">Roedor</option>
+                                  <option value="6">Réptil</option>
+                                  <option value="7">Outro</option>
+                              </select>
+                            </div>
+      
+                            <div class="col">
+                                  <label for="raca">Raça:</label>
+                                  <input id="raca"
+                                   class="form-control" type="text" 
+                                   name="raca"
+                                   placeholder="ex: Vira-Lata, Poodle, Calopsita">
+                            </div>
+                        </div>
+      
+                      </fieldset>
+      
+                      <script>
+                          function clickAlert(evt) {
+                              window.location.replace("index.html");
+                              alert("Não estamos aceitando novos registros no momento");
+                              return false;
+                          }
+                      </script>
+      
+                      <div class="row mt-5">
+                          <button id="btnregister" class="btn btn-lg btn-primary btn-block">Cadastrar</button>    
+                      </div>
+                      
+      
+                    </form>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+            <!-- FIM CADASTRO DE PET -->
+          </div>
+          <!-- /.container -->
+
+
+          
+
+    </div>
+    
+</body>
+</html>
