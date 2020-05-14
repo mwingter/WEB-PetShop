@@ -117,6 +117,7 @@ ol {
 }
 /* fim produtos */
 
+
 /* inicio admin */
 
 body {
@@ -150,6 +151,7 @@ body {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    text-align: center;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -242,6 +244,18 @@ body {
         margin-right: 0;
     }
 }
+    #button-admin{
+        color: white;
+        width: 200px;
+    }
+
+    iframe{
+        width: 100%; 
+        height: 100%;
+    }
+
+
+    
 
 /* fim admin */
 
