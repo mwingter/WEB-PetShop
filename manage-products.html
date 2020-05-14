@@ -6,58 +6,78 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>MANAGE PRODUCTS</h1>
-        <div class="panel-body" wfd-id="6">
-            <form id="form-product" wfd-id="16">
-                <div class="table-responsive" wfd-id="17">
-                    <table class="table table-bordered table-hover">
+        <div class="container">
 
-                        <tbody>
-                            <tr>
-                                <td class="text-center">                      <input type="checkbox" name="selected[]" value="42" wfd-id="129">
-                                </td>
-                                <td class="text-center"> <img src="./images/produtos/caminha.png" alt="produto1" class="img-thumbnail"> </td>
-                                <td class="text-left">Produto1</td>
-                                <td class="text-left">Produto 1</td>
-                                <td class="text-right"> <span style="text-decoration: line-through;" wfd-id="31">R$100,00</span><br>
-                                    <div class="text-danger" wfd-id="30">R$90,00</div>
-                                </td>
-                                <td class="text-right"> <span class="label label-success" wfd-id="29">990</span> </td>
-                                <td class="text-left">Habilitado</td>
-                                </tr>
-                            <tr>
-                                <td class="text-center">                      <input type="checkbox" name="selected[]" value="30" wfd-id="128">
-                                </td>
-                                <td class="text-center"> <img src="./images/produtos/toca-gato.png" alt="Produto2" class="img-thumbnail"> </td>
-                                <td class="text-left">Produto2</td>
-                                <td class="text-left">Produto 2</td>
-                                <td class="text-right"> <span style="text-decoration: line-through;" wfd-id="28">R$100,00</span><br>
-                                    <div class="text-danger" wfd-id="27">R$80,00</div>
-                                </td>
-                                <td class="text-right"> <span class="label label-success" wfd-id="26">7</span> </td>
-                                <td class="text-left">Habilitado</td>
-                                </tr>
-                            <tr>
-                                <td class="text-center">                      <input type="checkbox" name="selected[]" value="47" wfd-id="127">
-                                </td>
-                                <td class="text-center"> <img src="./images/produtos/brinquedo-gato.png" alt="Produto 3" class="img-thumbnail" > </td>
-                                <td class="text-left">Produto 3</td>
-                                <td class="text-left">Produto 3</td>
-                                <td class="text-right">                      R$100,00
-                                </td>
-                                <td class="text-right"> <span class="label label-success" wfd-id="25">1000</span> </td>
-                                <td class="text-left">Habilitado</td>
-                                 </tr>
-
-                        </tbody>
-                    </table>
-                </div>
-            </form>
-            <div class="row" wfd-id="7">
-               <div class="col-sm-6 text-right" wfd-id="8">Exibindo de 1 a 3 do total de 3 (1 páginas)</div>
+            <div class="row m-1">
+                <h1>MANAGE PRODUCTS</h1>
+                <a class="col-2 btn btn-primary h-75" href="register-admin.html"><b><h5>ADD Product</h5></b></a>
             </div>
-        </div>
 
+
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preço Cheio</th>
+                        <th scope="col">Desconto</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Habilitado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><img src="./images/produtos/caminha.png" style="width: 25px;"></td>
+                        <td>Produto 1</td>
+                        <td>R$100,00</td>
+                        <td>R$01,00</td>
+                        <td>3</td>
+                        <td>Bom</td>
+                        <td>Sim</td>
+
+                        <td>
+                            <a href="produtos.html"><img src="images/lupa.png" style="width: 30px;"></a>
+                            <a href="produtos.html"><img src="images/remove-button.png" style="width: 25px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><img src="./images/produtos/brinquedo-gato.png" style="width: 25px;"></td>
+                        <td>Produto 2</td>
+                        <td>R$200,00</td>
+                        <td>R$02,00</td>
+                        <td>4</td>
+                        <td>Muito Bom</td>
+                        <td>Sim</td>
+
+                        <td>
+                            <a href="produtos.html"><img src="images/lupa.png" style="width: 30px;"></a>
+                            <a href="produtos.html"><img src="images/remove-button.png" style="width: 25px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><img src="./images/produtos/toca-gato.png" style="width: 25px;"></td>
+                        <td>Produto 3</td>
+                        <td>R$300,00</td>
+                        <td>R$03,00</td>
+                        <td>6</td>
+                        <td>Ruim</td>
+                        <td>Não</td>
+
+                        <td>
+                            <a href="produtos.html"><img src="images/lupa.png" style="width: 30px;"></a>
+                            <a href="produtos.html"><img src="images/remove-button.png" style="width: 25px;"></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
 
     </body>
 </html>
