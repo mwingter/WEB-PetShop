@@ -120,9 +120,7 @@ ol {
 
 /* inicio admin */
 
-body {
-    overflow-x: hidden;
- }
+
 
 /* Toggle Styles */
 
@@ -251,7 +249,9 @@ body {
 
     iframe{
         width: 100%; 
+        overflow: hidden; 
         height: 100%;
+        position: absolute;
     }
 
 
