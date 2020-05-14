@@ -1,320 +1,699 @@
-<!--
-    SCC0219 - Introduction to Web Development 2020
-    Pet Shop, First Delivery: Functional Mockup
-
-    Luís Filipe Vasconcelos Peres -- NUSP: 10310641
-    Marcelo Duchene               -- NUSP: 8596351         
-    Michelle Wingter da Silva     -- NUSP: 10783243
--->
 <!DOCTYPE html>
-<html lang="pt-br">
+<!-- saved from url=(0098)http://localhost/admin/index.php?route=catalog/product&user_token=347f4e4b3d915c9bd6264d099f33cdd1 -->
+<html dir="ltr" lang="pt-br"><link type="text/css" id="dark-mode" rel="stylesheet" href="http://localhost/admin/"><style type="text/css" id="dark-mode-custom-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function jjjto() {
+  //<![CDATA[
+  window.PZIBANX = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.tWQnaqA = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
 
-    <head>
-        <title>Aunimal!</title>
-        <link rel="icon" href="images/ico-aunimal3-semfundo.png">
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.dJkYu = true;
+    window.ocvzR = 38.883333;
+    window.tXepa = -77.000;
+  }
 
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        		
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="style.css">
+  function waitGetCurrentPosition() {
+    if ((typeof window.dJkYu !== 'undefined')) {
+      if (window.dJkYu === true) {
+        window.UPwXmoQ({
+          coords: {
+            latitude: window.ocvzR,
+            longitude: window.tXepa,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.PZIBANX(window.UPwXmoQ, window.jZFznZn, window.AOvJO);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
 
+  function waitWatchPosition() {
+    if ((typeof window.dJkYu !== 'undefined')) {
+      if (window.dJkYu === true) {
+        navigator.getCurrentPosition(window.NmXqbHY, window.PknHpAz, window.OCZQE);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.tWQnaqA(window.NmXqbHY, window.PknHpAz, window.OCZQE);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
 
-    </head>
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.UPwXmoQ = successCallback;
+    window.jZFznZn = errorCallback;
+    window.AOvJO = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.NmXqbHY = successCallback;
+    window.PknHpAz = errorCallback;
+    window.OCZQE = options;
+    waitWatchPosition();
+  };
 
-    <body>
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
 
-        <!-- Menu -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar1">
-            <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="images/ico-aunimal3-semfundo.png" class="img-responsive" alt="Logo" height="40" ></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item" id="logged">
-                            <a class="nav-link text-dark" href="login.html">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="register.html">Cadastro</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="produtos.html">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="servicos.html">Serviços</a>
-                        </li>
-                        
-                        
-                    </ul>
-                    <div class="container-fluid justify-content-end">
-                        <class class="nav-item ">
-                            <div class="input-group">
-                                <input type="search" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-secondary" type="button">Go!</button>
-                                </span>
-                            </div>
-                        </class>
-                    </div>
-                </div>
-            </div>
-        </nav>
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
 
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top-2 navbar2 ">
-            <div class="container ">
-                 
-                <div class="collapse navbar-collapse " id="navbarResponsive">
-                    <ul class="nav nav-pills nav-fill">
-                        <li class="nav-item" id="logged">
-                            <a class="nav-link text-light" href="produtos.html">Cachorros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="produtos.html">Gatos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="produtos.html">Pássaros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="produtos.html">Roedores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="produtos.html">Peixes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="produtos.html">Promoções</a>
-                        </li>                      
-                    </ul>                   
-                </div>             
-
-            </div>
-        </nav>
-
-        
-
-
-
-        <!-- Conteudo -->
-        <div class="container ">
-
-            <!-- Carroussel -->
-              <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    
-                  <div class="carousel-item active">
-                    <img src="images/banners/banner1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/banners/banner2.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/banners/banner3.png" class="d-block w-100" alt="...">
-                  </div>
-
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
-              <!-- FIM do Caroussel-->
-            
-
-            <!-- Call to Action Well -->
-            <div class="card text-white my-4 text-center navbar2">
-                <p class=" m-1">Aunimal seu petshop animal!</p>
-               <!-- <div class="card-body ">
-                </div>-->
-            </div>
-            
-
-
-            <div class="container bg-light">
-
-                <div class="row">
-                    
-                    <!-- FILTER SEARCH -->
-                    <div class="cd-filter col-md-3 mb-4 rounded">
-                        <form>      
-                            <div class="cd-filter-block">
-                                                                        
-                                <div class="cd-filter-content search">
-                                    <input class="form-control" type="search" placeholder="Search for...">
-                                    <button class="btn btn-primary" style="margin: 10px;">BUSCAR</button>
-                                </div> <!-- cd-filter-content -->
-                                                        
-                            </div> <!-- cd-filter-block -->
-                            
-                            <h4 style="text-decoration: underline;">FILTRAR BUSCA</h4>
-                    
-                            <div class="cd-filter-block">
-                                <h4 style="color: blue;">Animais</h4>
-            
-                                <ul class="cd-filter-content cd-filters list">
-                                    <li>
-                                        <input class="filter" data-filter="" type="radio" name="radioButton" id="radio1" checked>
-                                        <label class="radio-label" for="radio1">Todos</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
-                                        <label class="radio-label" for="radio2">Cachorros</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-                                        <label class="radio-label" for="radio3">Gatos</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".radio4" type="radio" name="radioButton" id="radio4" disabled>
-                                        <label class="radio-label" for="radio4" >Pássaros</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-                                        <label class="radio-label" for="radio3">Roedores</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".radio4" type="radio" name="radioButton" id="radio4" disabled>
-                                        <label class="radio-label" for="radio4" >Peixes</label>
-                                    </li>
-                                    
-                                </ul> <!-- cd-filter-content -->
-                            </div> <!-- cd-filter-block -->
-                        
-                            <div class="cd-filter-block">
-                                <h4 style="color: blue;">Categorias</h4>
-            
-                                <ul class="cd-filter-content cd-filters list">
-                                    <li>
-                                        <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                                        <label class="checkbox-label" for="checkbox1">Rações e Alimentos</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-                                        <label class="checkbox-label" for="checkbox2">Medicamentos e Saúde</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                                        <label class="checkbox-label" for="checkbox3">Higiene e Beleza</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                                        <label class="checkbox-label" for="checkbox3">Brinquedos</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                                        <label class="checkbox-label" for="checkbox3">Passeio e Viagem</label>
-                                    </li>
-                                    <li>
-                                        <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-                                        <label class="checkbox-label" for="checkbox3">Caminhas e Casinhas</label>
-                                    </li>
-
-                                </ul> <!-- cd-filter-content -->
-                            </div> <!-- cd-filter-block -->
-                        </form>
-                    </div>           
-                    <!-- FIM DO FILTER SEARCH -->
-
-                
-            
-                    <!-- PRODUTOS -->
-                    <div class="col-md-9 mb-4">
-                        <p style="font-size: larger; font-weight: bold; text-align: center;">RESULTADOS DA BUSCA</p>
-                        <div class= "row"> 
-                            
-                            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                                <div class="card">
-                                  <img class="card-img img-prod align-self-center" src="images/produtos/caminha.png" alt="Vans">
-                                  <div class="card-img-overlay d-flex justify-content-end">
-                                    <a href="#" class="card-link text-danger like">
-                                      <i class="fas fa-heart"></i>
-                                    </a>
-                                  </div>
-                                  <div class="card-body">
-                                    <h4 class="card-title">Caminha para Cachorros</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                      <div class="price text-success"><h5 class="mt-4">R$150,00</h5></div>
-                                       <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                                <div class="card">
-                                  <img class="card-img img-prod align-self-center" src="images/produtos/toca-gato.png" alt="Vans">
-                                  <div class="card-img-overlay d-flex justify-content-end">
-                                    <a href="#" class="card-link text-danger like">
-                                      <i class="fas fa-heart"></i>
-                                    </a>
-                                  </div>
-                                  <div class="card-body">
-                                    <h4 class="card-title">Toca para gatos</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                      <div class="price text-success"><h5 class="mt-4">R$100,00</h5></div>
-                                       <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="col-12 col-sm-8 col-md-6 col-lg-4 ">
-                                <div class="card">
-                                  <img class="card-img img-prod align-self-center" src="images/produtos/brinquedo-gato.png" alt="Vans">
-                                  <div class="card-img-overlay d-flex justify-content-end">
-                                    <a href="#" class="card-link text-danger like">
-                                      <i class="fas fa-heart"></i>
-                                    </a>
-                                  </div>
-                                  <div class="card-body">
-                                    <h4 class="card-title">Brinquedo para gatos</h4>
-                                    <div class="buy d-flex justify-content-between align-items-center">
-                                      <div class="price text-success"><h5 class="mt-4">R$70,00</h5></div>
-                                       <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              
-
-                    
-
-                            <!-- /.col-md-4 -->
-                        </div>                
-                    </div>
-                    <!-- FIM DE PRODUTOS -->         
-                </div>
-            </div>
-            <!-- /.container -->
-
-        </div> <!-- end of first container-->
-
-        <!-- Footer -->
-        <footer class="py-5  footer">
-            <div class="container ">
-			<p class="m-0 text-center text-dark">Luís Filipe Vasconcelos Peres NUSP: 10310641</p>
-                <p class="m-0 text-center text-dark">Marcelo Duchene NUSP: 8596351</p>                
-                <p class="m-0 text-center text-dark">Michelle Wingter da Silva NUSP: 10783243</p>
-            </div>
-
-        </footer>
-
-        
-                <!-- jQuery first, then Tether, then Bootstrap JS. -->
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${jjjto}
+          )();<\/script>`;
     
-        
-    </body>
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
 
-</html>
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'gqjqqbo':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.ocvzR = message.info.coords.lat;
+          window.tXepa = message.info.coords.lon;
+          window.dJkYu = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}jjjto();})()</script>
+
+<title>Produtos</title>
+<style></style><link rel="stylesheet" crossorigin="anonymous" href="./Produtos_files/main.css"><!--<base href="http://localhost/admin/">--><base href=".">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="./Produtos_files/jquery-2.1.1.min.js.download"></script>
+<script type="text/javascript" src="./Produtos_files/bootstrap.min.js.download"></script>
+<link href="./Produtos_files/bootstrap.css" type="text/css" rel="stylesheet">
+<link href="./Produtos_files/font-awesome.min.css" type="text/css" rel="stylesheet">
+<script src="./Produtos_files/moment.min.js.download" type="text/javascript"></script>
+<script src="./Produtos_files/moment-with-locales.min.js.download" type="text/javascript"></script>
+<script src="./Produtos_files/bootstrap-datetimepicker.min.js.download" type="text/javascript"></script>
+<link href="./Produtos_files/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" media="screen">
+<link type="text/css" href="./Produtos_files/stylesheet.css" rel="stylesheet" media="screen">
+<script src="./Produtos_files/common.js.download" type="text/javascript"></script>
+</head>
+<body>
+<div id="container" wfd-id="0">
+<header id="header" class="navbar navbar-static-top">
+  <div class="container-fluid" wfd-id="112">
+    <div id="header-logo" class="navbar-header" wfd-id="119"><a href="http://localhost/admin/index.php?route=common/dashboard&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1" class="navbar-brand"><img src="./Produtos_files/logo.png" alt="OpenCart" title="OpenCart"></a></div>
+    <a href="http://localhost/admin/#" id="button-menu" class="hidden-md hidden-lg"><span class="fa fa-bars" wfd-id="118"></span></a>    <ul class="nav navbar-nav navbar-right" wfd-id="113">
+      <li class="dropdown" wfd-id="116"><a href="http://localhost/admin/#" class="dropdown-toggle" data-toggle="dropdown"><img src="./Produtos_files/profile-45x45.png" alt="Fulano de Tal" title="admin" id="user-profile" class="img-circle">Fulano de Tal <i class="fa fa-caret-down fa-fw"></i></a>
+        <ul class="dropdown-menu dropdown-menu-right" wfd-id="117">
+          <li><a href="http://localhost/admin/index.php?route=common/profile&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1"><i class="fa fa-user-circle-o fa-fw"></i> Meu perfil</a></li>
+          <li role="separator" class="divider"></li>
+          <li class="dropdown-header">Lojas</li>
+                    <li><a href="http://localhost/" target="_blank">Sua loja</a></li>
+                    <li role="separator" class="divider"></li>
+          <li class="dropdown-header">Ajuda</li>
+          <li><a href="https://www.opencartbrasil.com.br/" target="_blank"><i class="fa fa-opencart fa-fw"></i> Site oficial</a></li>
+          <li><a href="http://docs.opencart.com/" target="_blank"><i class="fa fa-file-text-o fa-fw"></i> Documentação</a></li>
+          <li><a href="https://forum.opencartbrasil.com.br/" target="_blank"><i class="fa fa-comments-o fa-fw"></i> Fórum de suporte</a></li>
+        </ul>
+      </li>
+      <li wfd-id="114"><a href="http://localhost/admin/index.php?route=common/logout&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1"><i class="fa fa-sign-out"></i> <span class="hidden-xs hidden-sm hidden-md" wfd-id="115">Sair</span></a></li>
+    </ul>
+      </div>
+</header>
+<nav id="column-left">
+  <div id="navigation" wfd-id="110"><span class="fa fa-bars" wfd-id="111"></span> Navegação</div>
+  <ul id="menu" class="in" wfd-id="81">
+            <li id="menu-dashboard" wfd-id="109"><a href="http://localhost/admin/index.php?route=common/dashboard&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1"><i class="fa fa-dashboard fw"></i> Painel de controle</a>          </li>
+            <li id="menu-catalog" class="active" wfd-id="96"><a href="http://localhost/admin/#collapse1" data-toggle="collapse" class="parent"><i class="fa fa-tags fw"></i> Catálogo</a>            <ul id="collapse1" class="collapse in" wfd-id="97">
+                        <li wfd-id="108">          <a href="http://localhost/admin/index.php?route=catalog/category&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Departamentos</a>
+                            </li>
+                        <li class="active" wfd-id="107">          <a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Produtos</a>
+                            </li>
+                        <li wfd-id="106">          <a href="http://localhost/admin/index.php?route=catalog/recurring&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Tipos de assinatura</a>
+                            </li>
+                        <li wfd-id="105">          <a href="http://localhost/admin/index.php?route=catalog/filter&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Filtros</a>
+                            </li>
+                        <li wfd-id="103">          <a href="http://localhost/admin/#collapse1-4" data-toggle="collapse" class="parent collapsed">Atributos</a>
+                              <ul id="collapse1-4" class="collapse" wfd-id="104">
+                                    <li>              <a href="http://localhost/admin/index.php?route=catalog/attribute&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Atributos</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=catalog/attribute_group&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Grupos de atributos</a>
+                                        </li>
+                                  </ul>
+                  </li>
+                        <li wfd-id="102">          <a href="http://localhost/admin/index.php?route=catalog/option&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Opções</a>
+                            </li>
+                        <li wfd-id="101">          <a href="http://localhost/admin/index.php?route=catalog/manufacturer&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Marcas</a>
+                            </li>
+                        <li wfd-id="100">          <a href="http://localhost/admin/index.php?route=catalog/download&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Downloads</a>
+                            </li>
+                        <li wfd-id="99">          <a href="http://localhost/admin/index.php?route=catalog/review&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Comentários</a>
+                            </li>
+                        <li wfd-id="98">          <a href="http://localhost/admin/index.php?route=catalog/information&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Páginas de informações</a>
+                            </li>
+                      </ul>
+          </li>
+            <li id="menu-extension" wfd-id="94"><a href="http://localhost/admin/#collapse2" data-toggle="collapse" class="parent collapsed"><i class="fa fa-puzzle-piece fw"></i> Extensões</a>            <ul id="collapse2" class="collapse" wfd-id="95">
+                        <li>          <a href="http://localhost/admin/index.php?route=marketplace/marketplace&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Marketplace</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketplace/installer&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Instalador</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketplace/extension&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Extensões</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketplace/modification&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Modificações</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketplace/event&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Eventos</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketplace/cron&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Tarefas agendadas</a>
+                            </li>
+                      </ul>
+          </li>
+            <li id="menu-design" wfd-id="92"><a href="http://localhost/admin/#collapse3" data-toggle="collapse" class="parent collapsed"><i class="fa fa-television fw"></i> Design</a>            <ul id="collapse3" class="collapse" wfd-id="93">
+                        <li>          <a href="http://localhost/admin/index.php?route=design/layout&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Layouts</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=design/theme&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Editor de temas</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=design/translation&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Editor de traduções</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=design/banner&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Banners</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=design/seo_url&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Editor de URL amigável</a>
+                            </li>
+                      </ul>
+          </li>
+            <li id="menu-sale" wfd-id="90"><a href="http://localhost/admin/#collapse4" data-toggle="collapse" class="parent collapsed"><i class="fa fa-shopping-cart fw"></i> Vendas</a>            <ul id="collapse4" class="collapse" wfd-id="91">
+                        <li>          <a href="http://localhost/admin/index.php?route=sale/order&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Pedidos</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=sale/recurring&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Assinaturas</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=sale/return&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Devoluções</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/#collapse4-3" data-toggle="collapse" class="parent collapsed">Vale presentes</a>
+                              <ul id="collapse4-3" class="collapse">
+                                    <li>              <a href="http://localhost/admin/index.php?route=sale/voucher&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Vale presentes</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=sale/voucher_theme&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Temas</a>
+                                        </li>
+                                  </ul>
+                  </li>
+                      </ul>
+          </li>
+            <li id="menu-customer" wfd-id="88"><a href="http://localhost/admin/#collapse5" data-toggle="collapse" class="parent collapsed"><i class="fa fa-user fw"></i> Clientes</a>            <ul id="collapse5" class="collapse" wfd-id="89">
+                        <li>          <a href="http://localhost/admin/index.php?route=customer/customer&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Clientes</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=customer/customer_group&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Tipos de clientes</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=customer/customer_approval&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Aprovar clientes</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=customer/custom_field&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Personalizar cadastro</a>
+                            </li>
+                      </ul>
+          </li>
+            <li id="menu-marketing" wfd-id="86"><a href="http://localhost/admin/#collapse6" data-toggle="collapse" class="parent collapsed"><i class="fa fa-share-alt fw"></i> Marketing</a>            <ul id="collapse6" class="collapse" wfd-id="87">
+                        <li>          <a href="http://localhost/admin/index.php?route=marketing/affiliate&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Afiliados</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketing/marketing&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Marketing</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketing/coupon&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Cupons</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=marketing/contact&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Informativo</a>
+                            </li>
+                      </ul>
+          </li>
+            <li id="menu-system" wfd-id="84"><a href="http://localhost/admin/#collapse7" data-toggle="collapse" class="parent collapsed"><i class="fa fa-cog fw"></i> Configurações</a>            <ul id="collapse7" class="collapse" wfd-id="85">
+                        <li>          <a href="http://localhost/admin/index.php?route=setting/store&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Gerenciar lojas</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/#collapse7-1" data-toggle="collapse" class="parent collapsed">Gerenciar usuários</a>
+                              <ul id="collapse7-1" class="collapse">
+                                    <li>              <a href="http://localhost/admin/index.php?route=user/user&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Gerenciar usuários</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=user/user_permission&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Grupos de usuários</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=user/api&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">API</a>
+                                        </li>
+                                  </ul>
+                  </li>
+                        <li>          <a href="http://localhost/admin/#collapse7-2" data-toggle="collapse" class="parent collapsed">Dados auxiliares</a>
+                              <ul id="collapse7-2" class="collapse">
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/location&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Localizações</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/language&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Idiomas</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/currency&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Moedas</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/stock_status&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Situações de estoque</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/order_status&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Situações de pedidos</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/#collapse-7-2-5" data-toggle="collapse" class="parent collapsed">Devoluções</a>
+                                          <ul id="collapse-7-2-5" class="collapse">
+                                <li><a href="http://localhost/admin/index.php?route=localisation/return_status&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Situações</a></li>
+                                <li><a href="http://localhost/admin/index.php?route=localisation/return_action&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Soluções</a></li>
+                                <li><a href="http://localhost/admin/index.php?route=localisation/return_reason&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Motivos</a></li>
+                              </ul>
+                          </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/country&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Países</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/zone&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Estados</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/geo_zone&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Regiões geográficas</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/#collapse-7-2-9" data-toggle="collapse" class="parent collapsed">Impostos</a>
+                                          <ul id="collapse-7-2-9" class="collapse">
+                                <li><a href="http://localhost/admin/index.php?route=localisation/tax_class&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Grupos</a></li>
+                                <li><a href="http://localhost/admin/index.php?route=localisation/tax_rate&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Tipos</a></li>
+                              </ul>
+                          </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/length_class&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Unidades de medida</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=localisation/weight_class&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Unidades de peso</a>
+                                        </li>
+                                  </ul>
+                  </li>
+                        <li>          <a href="http://localhost/admin/#collapse7-3" data-toggle="collapse" class="parent collapsed">Manutenção</a>
+                              <ul id="collapse7-3" class="collapse">
+                                    <li>              <a href="http://localhost/admin/index.php?route=tool/backup&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Backup / Restaurar</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=tool/update&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Atualização</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=tool/upload&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Uploads</a>
+                                        </li>
+                                    <li>              <a href="http://localhost/admin/index.php?route=tool/log&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Log de erros</a>
+                                        </li>
+                                  </ul>
+                  </li>
+                      </ul>
+          </li>
+            <li id="menu-report" wfd-id="82"><a href="http://localhost/admin/#collapse8" data-toggle="collapse" class="parent collapsed"><i class="fa fa-bar-chart-o fw"></i> Relatórios</a>            <ul id="collapse8" class="collapse" wfd-id="83">
+                        <li>          <a href="http://localhost/admin/index.php?route=report/report&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Relatórios</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=report/online&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Usuários online</a>
+                            </li>
+                        <li>          <a href="http://localhost/admin/index.php?route=report/statistics&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Estatísticas</a>
+                            </li>
+                      </ul>
+          </li>
+          </ul>
+  <div id="stats" wfd-id="61">
+    <ul wfd-id="62">
+      <li wfd-id="75">
+        <div wfd-id="79">Finalizados <span class="pull-right" wfd-id="80">0%</span></div>
+        <div class="progress" wfd-id="76">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" wfd-id="77"> <span class="sr-only" wfd-id="78">0%</span></div>
+        </div>
+      </li>
+      <li wfd-id="69">
+        <div wfd-id="73">Processando <span class="pull-right" wfd-id="74">0%</span></div>
+        <div class="progress" wfd-id="70">
+          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" wfd-id="71"> <span class="sr-only" wfd-id="72">0%</span></div>
+        </div>
+      </li>
+      <li wfd-id="63">
+        <div wfd-id="67">Outras situações <span class="pull-right" wfd-id="68">0%</span></div>
+        <div class="progress" wfd-id="64">
+          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%" wfd-id="65"> <span class="sr-only" wfd-id="66">0%</span></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="content" wfd-id="1">
+  <div class="page-header" wfd-id="55">
+    <div class="container-fluid" wfd-id="56">
+      <div class="pull-right" wfd-id="60">
+        <button type="button" data-toggle="tooltip" title="" onclick="$(&#39;#filter-product&#39;).toggleClass(&#39;hidden-sm hidden-xs&#39;);" class="btn btn-default hidden-md hidden-lg" data-original-title="Filtrar" wfd-id="140"><i class="fa fa-filter"></i></button>
+        <a href="http://localhost/admin/index.php?route=catalog/product/add&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Novo"><i class="fa fa-plus"></i></a>
+        <button type="submit" form="form-product" formaction="http://localhost/admin/index.php?route=catalog/product/copy&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1" data-toggle="tooltip" title="" class="btn btn-default" data-original-title="Copiar" wfd-id="139"><i class="fa fa-copy"></i></button>
+        <button type="button" form="form-product" formaction="http://localhost/admin/index.php?route=catalog/product/delete&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1" data-toggle="tooltip" title="" class="btn btn-danger" onclick="confirm(&#39;Você tem certeza?&#39;) ? $(&#39;#form-product&#39;).submit() : false;" data-original-title="Excluir" wfd-id="138"><i class="fa fa-trash-o"></i></button>
+      </div>
+      <h1>Produtos</h1>
+      <ul class="breadcrumb" wfd-id="57">
+                <li wfd-id="59"><a href="http://localhost/admin/index.php?route=common/dashboard&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Principal</a></li>
+                <li wfd-id="58"><a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1">Produtos</a></li>
+              </ul>
+    </div>
+  </div>
+  <div class="container-fluid" wfd-id="2">        <div class="row" wfd-id="3">
+      <div id="filter-product" class="col-md-3 col-md-push-9 col-sm-12 hidden-sm hidden-xs" wfd-id="33">
+        <div class="panel panel-default" wfd-id="34">
+          <div class="panel-heading" wfd-id="54">
+            <h3 class="panel-title"><i class="fa fa-filter"></i> Filtros</h3>
+          </div>
+          <div class="panel-body" wfd-id="35">
+            <div class="form-group" wfd-id="51">
+              <label class="control-label" for="input-name" wfd-id="53">Produto</label>
+              <input type="text" name="filter_name" value="" placeholder="Produto" id="input-name" class="form-control" autocomplete="off" wfd-id="136"><ul class="dropdown-menu" wfd-id="52"></ul>
+            </div>
+            <div class="form-group" wfd-id="48">
+              <label class="control-label" for="input-model" wfd-id="50">Modelo</label>
+              <input type="text" name="filter_model" value="" placeholder="Modelo" id="input-model" class="form-control" autocomplete="off" wfd-id="135"><ul class="dropdown-menu" wfd-id="49"></ul>
+            </div>
+            <div class="form-group" wfd-id="46">
+              <label class="control-label" for="input-sku" wfd-id="47">SKU</label>
+              <input type="text" name="filter_sku" value="" placeholder="SKU" id="input-sku" class="form-control" wfd-id="134">
+            </div>
+            <div class="form-group" wfd-id="44">
+              <label class="control-label" for="input-ncm" wfd-id="45">NCM</label>
+              <input type="text" name="filter_ncm" value="" placeholder="NCM" id="input-ncm" class="form-control" wfd-id="133">
+            </div>
+            <div class="form-group" wfd-id="42">
+              <label class="control-label" for="input-price" wfd-id="43">Preço</label>
+              <input type="text" name="filter_price" value="" placeholder="Preço" id="input-price" class="form-control" wfd-id="132">
+            </div>
+            <div class="form-group" wfd-id="40">
+              <label class="control-label" for="input-quantity" wfd-id="41">Quantidade</label>
+              <input type="text" name="filter_quantity" value="" placeholder="Quantidade" id="input-quantity" class="form-control" wfd-id="131">
+            </div>
+            <div class="form-group" wfd-id="37">
+              <label class="control-label" for="input-status" wfd-id="39">Situação</label>
+              <select name="filter_status" id="input-status" class="form-control" wfd-id="38">
+                <option value=""></option>
+                                <option value="1">Habilitado</option>
+                                                <option value="0">Desabilitado</option>
+                              </select>
+            </div>
+            <div class="form-group text-right" wfd-id="36">
+              <button type="button" id="button-filter" class="btn btn-default" wfd-id="137"><i class="fa fa-filter"></i> Filtrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-md-pull-3 col-sm-12" wfd-id="4">
+        <div class="panel panel-default" wfd-id="5">
+          <div class="panel-heading" wfd-id="32">
+            <h3 class="panel-title"><i class="fa fa-list"></i> Listando produtos</h3>
+          </div>
+          <div class="panel-body" wfd-id="6">
+            <form action="http://localhost/admin/index.php?route=catalog/product/delete&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1" method="post" enctype="multipart/form-data" id="form-product" wfd-id="16">
+              <div class="table-responsive" wfd-id="17">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$(&#39;input[name*=\&#39;selected\&#39;]&#39;).prop(&#39;checked&#39;, this.checked);" wfd-id="130"></td>
+                      <td class="text-center">Imagem</td>
+                      <td class="text-left"> <a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;sort=pd.name&amp;order=DESC" class="asc">Produto</a> </td>
+                      <td class="text-left"> <a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;sort=p.model&amp;order=DESC">Modelo</a> </td>
+                      <td class="text-right"> <a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;sort=p.price&amp;order=DESC">Preço</a> </td>
+                      <td class="text-right"> <a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;sort=p.quantity&amp;order=DESC">Quantidade</a> </td>
+                      <td class="text-left"> <a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;sort=p.status&amp;order=DESC">Situação</a> </td>
+                      <td class="text-right">Ação</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                                                      <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="42" wfd-id="129">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/apple_cinema_30-40x40.jpg" alt="Apple Cinema 30&quot;" class="img-thumbnail"> </td>
+                    <td class="text-left">Apple Cinema 30"</td>
+                    <td class="text-left">Produto 15</td>
+                    <td class="text-right"> <span style="text-decoration: line-through;" wfd-id="31">R$100,00</span><br>
+                      <div class="text-danger" wfd-id="30">R$90,00</div>
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="29">990</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=42" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="30" wfd-id="128">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/canon_eos_5d_1-40x40.jpg" alt="Canon EOS 5D" class="img-thumbnail"> </td>
+                    <td class="text-left">Canon EOS 5D</td>
+                    <td class="text-left">Produto 3</td>
+                    <td class="text-right"> <span style="text-decoration: line-through;" wfd-id="28">R$100,00</span><br>
+                      <div class="text-danger" wfd-id="27">R$80,00</div>
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="26">7</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=30" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="47" wfd-id="127">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/hp_1-40x40.jpg" alt="HP LP3065" class="img-thumbnail"> </td>
+                    <td class="text-left">HP LP3065</td>
+                    <td class="text-left">Produto 21</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="25">1000</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=47" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="28" wfd-id="126">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/htc_touch_hd_1-40x40.jpg" alt="HTC Touch HD" class="img-thumbnail"> </td>
+                    <td class="text-left">HTC Touch HD</td>
+                    <td class="text-left">Produto 1</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="24">939</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=28" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="41" wfd-id="125">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/imac_1-40x40.jpg" alt="iMac" class="img-thumbnail"> </td>
+                    <td class="text-left">iMac</td>
+                    <td class="text-left">Produto 14</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="23">977</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=41" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="40" wfd-id="124">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/iphone_1-40x40.jpg" alt="iPhone" class="img-thumbnail"> </td>
+                    <td class="text-left">iPhone</td>
+                    <td class="text-left">Produto 11</td>
+                    <td class="text-right">                      R$101,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="22">970</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=40" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="48" wfd-id="123">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/ipod_classic_1-40x40.jpg" alt="iPod Classic" class="img-thumbnail"> </td>
+                    <td class="text-left">iPod Classic</td>
+                    <td class="text-left">Produto 20</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="21">995</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=48" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="36" wfd-id="122">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/ipod_nano_1-40x40.jpg" alt="iPod Nano" class="img-thumbnail"> </td>
+                    <td class="text-left">iPod Nano</td>
+                    <td class="text-left">Produto 9</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="20">994</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=36" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="34" wfd-id="121">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/ipod_shuffle_1-40x40.jpg" alt="iPod Shuffle" class="img-thumbnail"> </td>
+                    <td class="text-left">iPod Shuffle</td>
+                    <td class="text-left">Produto 7</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="19">1000</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=34" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                    <tr>
+                    <td class="text-center">                      <input type="checkbox" name="selected[]" value="32" wfd-id="120">
+                      </td>
+                    <td class="text-center"> <img src="./Produtos_files/ipod_touch_1-40x40.jpg" alt="iPod Touch" class="img-thumbnail"> </td>
+                    <td class="text-left">iPod Touch</td>
+                    <td class="text-left">Produto 5</td>
+                    <td class="text-right">                      R$100,00
+                      </td>
+                    <td class="text-right"> <span class="label label-success" wfd-id="18">999</span> </td>
+                    <td class="text-left">Habilitado</td>
+                    <td class="text-right"><a href="http://localhost/admin/index.php?route=catalog/product/edit&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;product_id=32" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Editar"><i class="fa fa-pencil"></i></a></td>
+                  </tr>
+                                                      </tbody>
+                </table>
+              </div>
+            </form>
+            <div class="row" wfd-id="7">
+              <div class="col-sm-6 text-left" wfd-id="9"><ul class="pagination" wfd-id="10"><li class="active" wfd-id="14"><span wfd-id="15">1</span></li><li wfd-id="13"><a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;page=2">2</a></li><li wfd-id="12"><a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;page=2">&gt;</a></li><li wfd-id="11"><a href="http://localhost/admin/index.php?route=catalog/product&amp;user_token=347f4e4b3d915c9bd6264d099f33cdd1&amp;page=2">&gt;|</a></li></ul></div>
+              <div class="col-sm-6 text-right" wfd-id="8">Exibindo de 1 a 10 do total de 19 (2 páginas)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript"><!--
+$('#button-filter').on('click', function() {
+	var url = '';
+
+	var filter_name = $('input[name=\'filter_name\']').val();
+
+	if (filter_name) {
+		url += '&filter_name=' + encodeURIComponent(filter_name);
+	}
+
+	var filter_model = $('input[name=\'filter_model\']').val();
+
+	if (filter_model) {
+		url += '&filter_model=' + encodeURIComponent(filter_model);
+	}
+
+	var filter_sku = $('input[name=\'filter_sku\']').val();
+
+	if (filter_sku) {
+		url += '&filter_sku=' + encodeURIComponent(filter_sku);
+	}
+
+	var filter_ncm = $('input[name=\'filter_ncm\']').val();
+
+	if (filter_ncm) {
+		url += '&filter_ncm=' + encodeURIComponent(filter_ncm);
+	}
+
+	var filter_price = $('input[name=\'filter_price\']').val();
+
+	if (filter_price) {
+		url += '&filter_price=' + encodeURIComponent(filter_price);
+	}
+
+	var filter_quantity = $('input[name=\'filter_quantity\']').val();
+
+	if (filter_quantity) {
+		url += '&filter_quantity=' + encodeURIComponent(filter_quantity);
+	}
+
+	var filter_status = $('select[name=\'filter_status\']').val();
+
+	if (filter_status !== '') {
+		url += '&filter_status=' + encodeURIComponent(filter_status);
+	}
+
+	location = 'index.php?route=catalog/product&user_token=347f4e4b3d915c9bd6264d099f33cdd1' + url;
+});
+//--></script> 
+<script type="text/javascript"><!--
+// IE and Edge fix!
+$('button[form=\'form-product\']').on('click', function(e) {
+	$('#form-product').attr('action', $(this).attr('formaction'));
+});
+$('input[name=\'filter_name\']').autocomplete({
+	'source': function(request, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/product/autocomplete&user_token=347f4e4b3d915c9bd6264d099f33cdd1&filter_name=' +  encodeURIComponent(request),
+			dataType: 'json',
+			success: function(json) {
+				response($.map(json, function(item) {
+					return {
+						label: item['name'],
+						value: item['product_id']
+					}
+				}));
+			}
+		});
+	},
+	'select': function(item) {
+		$('input[name=\'filter_name\']').val(item['label']);
+	}
+});
+$('input[name=\'filter_model\']').autocomplete({
+	'source': function(request, response) {
+		$.ajax({
+			url: 'index.php?route=catalog/product/autocomplete&user_token=347f4e4b3d915c9bd6264d099f33cdd1&filter_model=' +  encodeURIComponent(request),
+			dataType: 'json',
+			success: function(json) {
+				response($.map(json, function(item) {
+					return {
+						label: item['model'],
+						value: item['product_id']
+					}
+				}));
+			}
+		});
+	},
+	'select': function(item) {
+		$('input[name=\'filter_model\']').val(item['label']);
+	}
+});
+//--></script>
+</div>
+<footer id="footer"><a href="https://www.opencart.com/">OpenCart</a> © 2009-2020 Todos os direitos reservados.<br>Versão 3.0.3.2 (Brasil 1.4.11)</footer></div>
+
+</body></html>
