@@ -1,11 +1,273 @@
+<!--
+    SCC0219 - Introduction to Web Development 2020
+    Pet Shop, First Delivery: Functional Mockup
+
+    Luís Filipe Vasconcelos Peres -- NUSP: 10310641
+    Marcelo Duchene               -- NUSP: 8596351         
+    Michelle Wingter da Silva     -- NUSP: 10783243
+-->
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>ESTATISTICAS</h1>
+<html lang="pt-br">
+
+    <head>
+        <title>Aunimal!</title>
+        <link rel="icon" href="images/ico-aunimal3-semfundo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="style.css">
+
+
+    </head>
+
+    <body>
+
+        <!-- Menu -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar1">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="images/ico-aunimal3-semfundo.png" class="img-responsive" alt="Logo" height="40" ></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" id="logged">
+                            <a class="nav-link text-dark" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="register.html">Cadastro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="produtos.html">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="servicos.html">Serviços</a>
+                        </li>
+                    </ul>
+                    <div class="container-fluid justify-content-end">
+                        <class class="nav-item ">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-secondary" type="button">Go!</button>
+                                </span>
+                            </div>
+                        </class>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container-fluid ">
+            <!--Menu admin -->
+            <div id="wrapper">
+
+                <!-- Sidebar -->
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand">
+                            <p class="text-white">
+                                PAINEL DO ADMIN
+                            </p>
+                        </li>
+                        <li>
+                            <img src="images/default-avatar.png" class="picture-src rounded-circle w-50 m-2">
+                        </li>
+                        <li>
+                            <button id="button-admin" class="btn btn-outline-secondary" onclick="displayIframe('manage-admin')">Gerenciar Admins</button>
+                        </li>
+                        <li>
+                            <button id="button-admin" class="btn btn-outline-secondary" onclick="displayIframe('manage-client')">Gerenciar Clientes</button>
+                        </li>
+                        <li>
+                            <button id="button-admin" class="btn btn-outline-secondary" onclick="displayIframe('manage-products')">Gerenciar Produtos</button>
+                        </li>
+                        <li>
+                            <button id="button-admin" class="btn btn-outline-secondary" onclick="displayIframe('manage-services')">Gerenciar Serviços</button>
+                        </li>
+                        <li>
+                            <button id="button-admin" class="btn btn-outline-secondary" onclick="displayIframe('statistics')">Estatisticas</button>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- /#sidebar-wrapper -->
+        
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <a href="#menu-toggle" class="btn btn-default border btn-dark" id="menu-toggle"> = </a>
+                                <div id="containerIframe">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- card deck -->
+                        <div class="card-deck">
+                            <!-- vendas de produtos -->
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <!-- titulo e aumentos -->
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-8">Produtos vendidos</div>
+                                        <div class="col text-right">+0</div>
+                                    </div>
+                                </div>
+                                <!-- dados -->
+                                <div class="card-body bg-dark">
+                                    <h6 class="mb-2 display-4">0</h6>
+                                </div>
+                                <!-- links -->
+                                <div class="card-footer">
+                                    <a href="http://" target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="card-link text-white">
+                                        Último mês
+                                    </a>
+                                    <a href="http://" target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="card-link text-white">
+                                        Total geral
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- vendas de servicos -->
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <!-- titulo e aumentos -->
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-8">Serviços vendidos</div>
+                                        <div class="col text-right">+0</div>
+                                    </div>
+                                </div>
+                                <!-- dados -->
+                                <div class="card-body bg-dark">
+                                    <h6 class="mb-2 display-4">0</h6>
+                                </div>
+                                <!-- links -->
+                                <div class="card-footer">
+                                    <a href="http://" target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="card-link text-white">
+                                        Último mês
+                                    </a>
+                                    <a href="http://" target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="card-link text-white">
+                                        Total geral
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- cadastro de clientes -->
+                            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                                <!-- titulo e aumentos -->
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col-8">Clientes cadastrados</div>
+                                        <div class="col text-right">+0</div>
+                                    </div>
+                                </div>
+                                <!-- dados -->
+                                <div class="card-body bg-dark">
+                                    <h6 class="mb-2 display-4">0</h6>
+                                </div>
+                                <!-- links -->
+                                <div class="card-footer">
+                                    <a href="http://" target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="card-link text-white">
+                                        Último mês
+                                    </a>
+                                    <a href="http://" target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="card-link text-white">
+                                        Total geral
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-dark">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between">
+                                    Últimos pedidos
+                                    <span class="badge badge-dark bagde-pill">
+                                        42
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body bg-dark">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-dark">
+                                        Banho
+                                    </li>
+                                    <li class="list-group-item border-dark">
+                                        Tosa
+                                    </li>
+                                    <li class="list-group-item border-dark">
+                                        Compra
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /#page-content-wrapper -->
+        
+            </div>
+            <!-- /#wrapper -->
+
+            <script>
+                $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                });
+
+                function displayIframe(page) {
+                    const iframe = document.getElementById('ifrm');
+                    if (iframe) {
+                        iframe.remove();
+                    }
+                    const containerIframe = document.getElementById('containerIframe');
+                    containerIframe.innerHTML = '<iframe id="ifrm" src="' + page + '.html" frameBorder="0"></iframe>'
+                }
+            </script>
+           
+
+        <!-- Fim Menu admin -->
+        </div>
+            
+
+
+
+    <!-- /.container -->
+
+    <!-- Footer 
+    <footer class="py-5  footer" style="bottom:fixed;">
+        <div class="container ">
+            <p class="m-0 text-center text-dark">Luís Filipe Vasconcelos Peres NUSP: 10310641</p>
+            <p class="m-0 text-center text-dark">Marcelo Duchene NUSP: 8596351</p>                
+            <p class="m-0 text-center text-dark">Michelle Wingter da Silva NUSP: 10783243</p>
+        </div>
+
+    </footer>-->
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
 </body>
+
 </html>
