@@ -1,11 +1,228 @@
+<!--
+    SCC0219 - Introduction to Web Development 2020
+    Pet Shop, First Delivery: Functional Mockup
+
+    Luís Filipe Vasconcelos Peres -- NUSP: 10310641
+    Marcelo Duchene               -- NUSP: 8596351         
+    Michelle Wingter da Silva     -- NUSP: 10783243
+-->
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>ESTATISTICAS</h1>
+<html lang="pt-br">
+
+    <head>
+        <title>Aunimal!</title>
+        <link rel="icon" href="images/ico-aunimal3-semfundo.png">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="style.css">
+
+
+    </head>
+
+    <body>
+        <!-- Page Content -->
+        <div class="container">
+            <!-- card deck -->
+            <div class="card-deck">
+                <!-- vendas de produtos -->
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <!-- titulo e aumentos -->
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8">Produtos vendidos</div>
+                            <div class="col text-right lead">+0</div>
+                        </div>
+                    </div>
+                    <!-- dados -->
+                    <div class="card-body bg-dark">
+                        <h6 class="mb-2 display-4">0</h6>
+                    </div>
+                    <!-- links -->
+                    <div class="card-footer">
+                        <a href="http://" target="_blank" 
+                        rel="noopener noreferrer"
+                        class="card-link text-white">
+                            Último mês
+                        </a>
+                        <a href="http://" target="_blank" 
+                        rel="noopener noreferrer"
+                        class="card-link text-white">
+                            Total
+                        </a>
+                    </div>
+                </div>
+                <!-- vendas de servicos -->
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <!-- titulo e aumentos -->
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8">Serviços vendidos</div>
+                            <div class="col text-right lead">+0</div>
+                        </div>
+                    </div>
+                    <!-- dados -->
+                    <div class="card-body bg-dark">
+                        <h6 class="mb-2 display-4">0</h6>
+                    </div>
+                    <!-- links -->
+                    <div class="card-footer">
+                        <a href="http://" target="_blank" 
+                        rel="noopener noreferrer"
+                        class="card-link text-white">
+                            Último mês
+                        </a>
+                        <a href="http://" target="_blank" 
+                        rel="noopener noreferrer"
+                        class="card-link text-white">
+                            Total
+                        </a>
+                    </div>
+                </div>
+                <!-- cadastro de clientes -->
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <!-- titulo e aumentos -->
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-8">Clientes cadastrados</div>
+                            <div class="col text-right lead">+0</div>
+                        </div>
+                    </div>
+                    <!-- dados -->
+                    <div class="card-body bg-dark">
+                        <h6 class="mb-2 display-4">0</h6>
+                    </div>
+                    <!-- links -->
+                    <div class="card-footer">
+                        <a href="http://" target="_blank" 
+                        rel="noopener noreferrer"
+                        class="card-link text-white">
+                            Último mês
+                        </a>
+                        <a href="http://" target="_blank" 
+                        rel="noopener noreferrer"
+                        class="card-link text-white">
+                            Total
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-dark">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        Últimos pedidos
+                        <span class="badge badge-info bagde-pill">
+                            42
+                        </span>
+                    </div>
+                </div>            
+        
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Pedido</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Data e hora</th>
+                        <th scope="col">Status de pagamento</th>
+                        <th scope="col">+Info</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><img src="images/default-avatar.png" style="width: 25px;"></td>
+                        <td>Mark</td>
+                        <td>Banho</td>
+                        <td>R$50,00</td>
+                        <td>03/05/2020 14:38</td>
+                        <td>Cancelado</td>
+                                        <td>
+                            <a href="perfil-admin.html"><img src="images/lupa.png" style="width: 30px;"></a>
+                            <a href="perfil-admin.html"><img src="images/remove-button.png" style="width: 25px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><img src="images/default-avatar.png" style="width: 25px;"></td>
+                        <td>Jacob</td>
+                        <td>Tosa</td>
+                        <td>R$100,00</td>
+                        <td>03/05/2020 11:23</td>
+                        <td>Completo</td>
+                                        <td>
+                            <a href="perfil-admin.html"><img src="images/lupa.png" style="width: 30px;"></a>
+                            <a href="perfil-admin.html"><img src="images/remove-button.png" style="width: 25px;"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><img src="images/default-avatar.png" style="width: 25px;"></td>
+                        <td>Larry</td>
+                        <td>Compra</td>
+                        <td>R$43,50</td>
+                        <td>01/05/2020 08:11</td>
+                        <td>Completo</td>
+                                        <td>
+                            <a href="perfil-admin.html"><img src="images/lupa.png" style="width: 30px;"></a>
+                            <a href="perfil-admin.html"><img src="images/remove-button.png" style="width: 25px;"></a>
+                        </td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+            <script>
+                $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+                });
+
+                function displayIframe(page) {
+                    const iframe = document.getElementById('ifrm');
+                    if (iframe) {
+                        iframe.remove();
+                    }
+                    const containerIframe = document.getElementById('containerIframe');
+                    containerIframe.innerHTML = '<iframe id="ifrm" src="' + page + '.html" frameBorder="0"></iframe>'
+                }
+            </script>
+           
+
+        <!-- Fim Menu admin -->
+        </div>
+            
+
+
+
+    <!-- /.container -->
+
+    <!-- Footer 
+    <footer class="py-5  footer" style="bottom:fixed;">
+        <div class="container ">
+            <p class="m-0 text-center text-dark">Luís Filipe Vasconcelos Peres NUSP: 10310641</p>
+            <p class="m-0 text-center text-dark">Marcelo Duchene NUSP: 8596351</p>                
+            <p class="m-0 text-center text-dark">Michelle Wingter da Silva NUSP: 10783243</p>
+        </div>
+
+    </footer>-->
+
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
 </body>
+
 </html>
