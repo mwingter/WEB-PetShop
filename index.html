@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<!-- Nome: Laura Pereira de Gouveia
+	Número USP 9880200
+	Nome: Pedro Henrique Dias Junqueira de Souza
+	Número USP 11294312
+	-->
+<head>
+	<title>Pet Shop Pet Mania</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel = "shortcut icon" type = "image/x-icon" href = "img/favicon.ico"/>
+	<link type="text/css" rel = "stylesheet" href = "./css/inicio.css"/>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">	</script>
+	<script src="http://malsup.github.com/jquery.form.js"></script> 
+	<script type="text/javascript" src="./js/local-scripts.js"></script>
+	<script type="text/javascript" src="./js/components.js"></script>
+	<script type="text/javascript" src="./js/delete-methods.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<img src="img/logo1.png"></img>
+			<form class="form" id="searchForm">
+				<input type="text" name="queryString" id="search" placeholder="Fa&ccedil;a buscas em nosso site!">
+				<button type="submit"><i class="fa fa-search"></i></button>		
+			</form>
+			<div class="minimenu">
+				<a href="#login" onclick='userContent();'><i class="fa fa-user">Usu&aacute;rio</i></a>
+				<a href="#carrinho" onclick='shoppingChartRender();'><i class="fa fa-shopping-cart">Carrinho</i></a>
+				<div class="menu-toggler"><i class="fa fa-bars">Menu</i></div>
+			</div>
+		</div>
+		<div class="menu">
+			<nav>
+				<ul>
+					<li><a href="#home" onclick='changeContent("home-content");'><i class="fa fa-paw"></i>Home</a></li>
+					<li><a name="Caes" href="#caes" class="getButton"><i class="fa fa-paw"></i> C&atilde;es</a></li>
+					<li><a name="Gatos" href="#gatos" class="getButton"><i class="fa fa-paw"></i> Gatos</a></li>
+					<li><a name="Outros" href="#outros" class="getButton"><i class="fa fa-paw"></i> Outros</a></li>
+					<li><a href="#servicos" onclick='changeContent("servicos-content")'><i class="fa fa-paw"></i> Servi&ccedil;os</a></li>
+					<li><a name="Racoes" href="#racoes" class="getButton"><i class="fa fa-paw"></i> Ra&ccedil;&otilde;es</a></li>
+					<li><a name="Acessorios" href="#acessorios" class="getButton"><i class="fa fa-paw"></i> Acess&oacute;rios</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="content" id="admin-content" style="display: none;">
+		<div id="blocoAdmin">
+			<div id="adminPage">
+			<h3 class="bd">Itens <a href="#criarItem" onclick='changeContent("criarItem-content")'><i class="fa fa-plus"></i></a></h3>
+				<div id="adminProduct">
+				</div>
+			<h3 class="bd">Usu&aacute;rios <a href="#cadastro" onclick='changeContent("cadastro-content")'><i class="fa fa-plus"></i></a></h3>
+				<div id="adminUser">
+				</div>
+			<h3 class="bd">Servi&ccedil;os <a href="#servicos" onclick='changeContent("servicos-content")'><i class="fa fa-plus"></i></a></h3>
+				<div id="adminService">
+				</div>
+				<button class="loginButton" onclick="logout()">Sair</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="content" id="cadastro-content" style="display: none">
+		<div id="blocoCadastro">
+			<form class="formCadastro" id="formCadastro" method="POST">
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Cadastro <i class="fa fa-paw"></i></h3>
+				<input type="email" name="email" placeholder="Insira seu Email" required>
+                <br>
+                <input type="text" name="name" placeholder="Insira seu nome completo" required>
+                <br>
+                <input type="text" name="adress" placeholder="Insira seu endere&ccedil;o" required>
+                <br> 
+                <input type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" required>
+                <br> 
+				<input type="password" name="password" placeholder="Insira sua senha" required>
+				<br> 
+				<input type="password" name="passwordConfirm" placeholder="Confirme sua senha" required>
+				<br>
+				<h3 class="titulo">Foto :</h3> 
+				<input type="file" name="img" src="/images/usuario.png" placeholder="Escolha uma imagem" required>
+				<br>
+				<input name="type" value="user" style="display: none;">
+				<button class="loginButton">Fazer cadastro</button>
+			</form>
+			
+		</div>
+	</section>
+
+	<section class="content" id="carrinho-content" style="display: none;"></section>
+
+	<section class="content" id="criarItem-content" style="display: none;">
+		<div id="blocoCadastroItem">
+			<form class="formCadastroItem" id="formCadastroItem" enctype="multipart/form-data" method="POST">
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Cadastro de Item <i class="fa fa-paw"></i></h3>
+				<h3 class="titulo">Foto :</h3> 
+				<input name="img" id="newItemImg" type="file" placeholder="Escolha uma imagem" required>
+                <br>
+                <input name="name" type="text" placeholder="Insira o nome do item" required>
+                <br>
+                <input name="price" type="text" placeholder="Insira seu pre&ccedil;o" required>
+                <br> 
+                <input name="desc" type="text" placeholder="Insira uma descri&ccedil;ao" required>
+                <br>
+                <input name="qtEstoque" type="text" placeholder="Insira a atual quantidade em estoque" required>
+                <br>
+                <select name="tag" placeholder="Tag do produto" required>
+                    <option>Caes</option>
+                    <option>Gatos</option>
+                    <option>Outros</option>
+                    <option>Racoes</option>
+                    <option>Acessorios</option>
+				</select>
+				<input name="qtVendida" value="0" style="display: none;">
+				<input name="type" value="product" style="display: none;">
+				<button class="loginButton">Criar Item</button>
+			</form>
+		</div>
+	</section>
+
+	<section class="content" id="usuario-content" style="display: none;">
+	</section>
+
+	<section class="content" id="home-content">
+		<div class = wrapper>
+			<div class="slideshowContainer">
+				<div class="slide">
+						<img class="image" src="img/promocao1.png">
+				</div>
+					<div class="slide">
+							<img class="image" src="img/promocao2.png">
+					</div>
+					<div class="slide">
+						<img class="image" src="img/promocao3.png">
+					</div>
+					<div style="text-align: center" class="pontos">
+						<br>
+						<br>
+						<br>
+						<span class="dot" onclick="currentSlide(1)"></span>
+						<span class="dot" onclick="currentSlide(2)"></span>
+						<span class="dot" onclick="currentSlide(3)"></span>
+					</div>
+					<script>
+						var slideIndex = 1;
+						showSlides(slideIndex);
+
+						function plusSlides(n) {
+						  showSlides(slideIndex += n);
+						}
+
+						function currentSlide(n) {
+						  showSlides(slideIndex = n);
+						}
+
+						function showSlides(n) {
+						  var i;
+						  var slides = document.getElementsByClassName("slide");
+						  var dots = document.getElementsByClassName("dot");
+						  if (n > slides.length) {slideIndex = 1}    
+						  if (n < 1) {slideIndex = slides.length}
+						  for (i = 0; i < slides.length; i++) {
+						      slides[i].style.display = "none";  
+							}
+						  for (i = 0; i < dots.length; i++) {
+						      dots[i].className = dots[i].className.replace(" active2", "");
+						  }
+						  slides[slideIndex-1].style.display = "flex";  
+						  dots[slideIndex-1].className += " active2";
+						}
+				</script>
+			</div>
+		</div>
+		<h1 class="titulo"> <i class="fa fa-paw"></i> Itens mais vendidos  <i class="fa fa-paw"></i></h1>
+		<div class="produtos" id="bestSellingProducts">
+		
+		</div>
+		<br>
+		<br>
+		<br>
+	</section>
+
+	<section class="content" id="login-content" style="display: none;">
+		<div id="blocoLogin">
+			<form id="formLogin" method="POST">
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Login <i class="fa fa-paw"></i></h3>
+				<input name="email" type="text" placeholder="Insira seu email" name="text" required>
+				<br>
+				<input name="password" type="password" placeholder="Insira sua senha" name="senha" required>
+				<input name="type" value="login" style="display: none;">
+				<button class="loginButton">Fazer login</button>
+			</form>
+			
+			<a href="#cadastro" onclick='changeContent("cadastro-content")'><button id="cadastroButton">Fazer cadastro</button></a>
+		</div>
+	</section>
+
+	<section class="content" id="pagamento-content" style="display: none;">
+		<div id="blocoPagamento">
+			<form id="formPagamento" method="POST">
+                <h3 class="titulo"> <i class="fa fa-paw"></i> Pagamento <i class="fa fa-paw"></i></h3>
+                <select name="cartao">
+                    <option>Visa</option>
+                    <option>MasterCard</option>
+                    <option>Elo</option>
+                    <option>American Express</option>
+                </select>
+                <br>
+				<input name="numero" type="text" placeholder="Insira o n&uacute;mero do cart&atilde;o">
+                <br>
+                <input name="titular" type="text" placeholder="Insira o nome do titular">
+                <br>
+                <input name="vencimento" type="text" placeholder="Data de vencimento">
+                <br>
+				<input name="cvv" type="text" placeholder="CVV">
+				<input name="type" value="sale" style="display: none;">
+				<input class="userRequired" name="user" style="display: none;">
+
+			</form>
+			<button id="pagamentoButton">Concluir</button>
+		</div>
+	</section>
+
+	<section class="content" id="produtos-content" style="display: none;"></section>
+
+	<section class="content" id="exibeProduto-content" style="display: none;"></section>
+
+	<section class="content" id="servicos-content" style="display: none;">
+		<div id="blocoFormServicos">
+			<form id="formServicos" onsubmit="return userRequired(event)" method="POST">
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Insira o tipo do animal  <i class="fa fa-paw"></i></h3>
+				<input name="animal" type="text" required>
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Escolha o servi&ccedil;o  <i class="fa fa-paw"></i></h3>
+				<select name="servico" required>
+					<option value="banho">Banho</option>
+					<option value="tosa">Tosa</option>
+					<option value="vacina">Vacina&ccedil;&atilde;o</option>
+					<option value="veterinario">Veterin&aacute;rio</option>
+				</select>
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Escolha a data <i class="fa fa-paw"></i></h3>
+				<input name="data" type="date" min="2019-11-01" required/>
+				<h3 class="titulo"> <i class="fa fa-paw"></i> Escolha o hor&aacute;rio  <i class="fa fa-paw"></i></h3>
+				<select name="horario" required>
+						<option value="08:00">08:00 - 08:30</option>
+						<option value="08:30">08:30 - 09:00</option>
+						<option value="09:00">09:00 - 09:30</option>
+						<option value="09:30">09:30 - 10:00</option>
+						<option value="10:00">10:00 - 10:30</option>
+						<option value="10:30">10:30 - 11:00</option>
+						<option value="11:00">11:00 - 11:30</option>
+						<option value="11:30">11:30 - 12:00</option>
+						<option value="14:00">14:00 - 14:30</option>
+						<option value="14:30">14:30 - 15:00</option>
+						<option value="15:00">15:00 - 15:30</option>
+						<option value="15:30">15:30 - 16:00</option>
+						<option value="16:00">16:00 - 16:30</option>
+						<option value="16:30">16:30 - 17:00</option>
+						<option value="17:00">17:00 - 17:30</option>
+						<option value="17:30">17:30 - 18:00</option>
+				</select>
+				<input name="type" value="service" style="display: none;">
+				<input class="userRequired" name="user" style="display: none;">
+				<p><button type="submit">Agendar servi&ccedil;o</button></p>
+			</form>
+			
+		</div>
+	</section>
+
+	<footer>
+	  <div class="caixa">
+	    <div class="blocoFooter">
+	    <nav>
+	    <il>
+	      <h3>Desenvolvedores da Pet Mania:</h3>
+	      <li>Pedro Souza - 11294312</li>
+	      <li>Laura Gouveia - 9880200</li>
+	    </il>
+	    </nav>
+	    </div>
+	    <div class="blocoFooter">
+	    <nav>
+	    <div class="contato">
+	           	<h3> Contato: </h3> 
+	            <p>
+	              <a href="#"><i class="fa fa-facebook-square"></i></a> 
+	              <a href="#"><i class="fa fa-instagram" style="font-size: 24px;"></i></a> 
+	              <a href="#"><i class="fa fa-linkedin-square"></i></a>
+	            </p>
+	    </div>
+	    </nav>
+	    </div>
+	        <div class="blocoFooterInscrever">
+	          <div class="increver">
+	            <p style="font-weight: bold;">Inscreva-se no nosso site para promo&ccedil;&otilde;es exclusivas!</p>
+	            <form action="/submit-email">
+	              <input type='text' placeholder="Seu email aqui" required></input>
+	              <button type="submit">Enviar</button>
+	            </form>
+	          </div>
+	      
+	      </div>
+	    </div>
+	</footer>
+</body>
+<!--Script após o body para adicionar os listeners corretamente-->
+<script type="text/javascript" src="./js/post-methods-callbacks.js"></script>
+<script type="text/javascript" src="./js/get-methods.js"></script>
+</html>

@@ -1,0 +1,904 @@
+body{
+	background-color: #dbf9ff;
+	top: 0;
+
+}
+
+a:hover {
+	cursor: pointer;
+}
+header{
+	background-color: #FDDCF1;
+	position: relative;
+	width: 100%;
+	z-index: 1000;
+	font-size: 1.2vw;
+	top: 0%;
+	left: 0%;
+	max-height: 200px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+header .container{
+	display: flex;
+}
+header img{
+	flex-basis: 50%;
+	height: 160px;
+	width: auto;
+}
+header .container .form{
+	padding: 10px;
+	display: flex;
+	max-height: 30px;
+	align-self: center;
+	flex-basis: 30%;
+	text-align: center;
+
+}
+header .container #busca{
+	width: 100%;
+}
+
+header .container .form button{
+	margin: 0;
+}
+
+header .container .minimenu{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-self: center;
+	height: 50%;
+	color: white;
+}
+
+header .container .minimenu i{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left:5px;
+	padding-right: 5px;
+	border-right: 1px solid #e6dce5;
+	height: 50px;
+	color: #088BA4;
+}
+
+header .container .minimenu i:hover{
+	background-color: #2196f3;
+}
+
+header .container .minimenu a{
+	text-decoration: none;
+	color: #088BA4;
+}
+
+header .container .menu-toggler{
+	display: none;
+	cursor: pointer;
+}
+
+
+header .menu{
+	padding: 0 100px;
+	background-color: #088BA4;
+	width: 100%;
+	box-sizing: border-box;
+	z-index: 10000;
+}
+
+header .menu nav ul{
+	display: flex;
+	list-style: none;
+	text-align: center; 
+	justify-content: center;
+}
+
+header .menu nav ul li{
+	margin-right: 10px;
+	padding-right: 10px;
+	white-space: nowrap;
+  	overflow: hidden;
+}
+
+header .menu nav ul li a{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+
+header .menu nav ul li a:hover{
+	color: #fff;
+	background: #2196f3;
+}
+
+@media(max-width: 945px){
+	header{
+		font-size: 3vw;
+	}
+	header .container{
+		flex-direction: column;
+	}
+
+	header .container .minimenu .menu-toggler{
+		display: flex;
+	}
+
+	header .container .form{
+		flex-basis: 50%;
+
+	}
+
+	header .menu nav{
+		position: fixed;
+		width: 100%;
+		height: calc(100vh - 50px);
+		background-color: #088BA4;
+		top: 260px;
+		left: -100%;
+		transition: 0.5s;
+		display: block;
+		z-index: 10000;
+	}
+
+	header .menu nav.active{
+		left: 0;
+		display: block;
+	}
+	header .menu nav ul{
+		display: block;
+		text-align: center;
+	}
+	header .menu nav ul li a{
+		border-bottom: 1px solid rgba(0,0,0,0.2)
+	}
+	header .container .minimenu{
+		width: 100%;
+		background-color: #088BA4;
+		color: #af6e4e;
+		padding-top: 0.5px;
+		padding-bottom: 0.5px;
+
+	}
+	header .container .minimenu i{
+		color: white;
+	}
+
+	header .container .minimenu a{
+		text-decoration: none;
+		color: white;
+	}
+}
+
+section{
+	position: relative;
+	top:100px;
+	padding-bottom: 300px;
+}
+
+
+.wrapper .slideshowContainer .slide .image{
+	flex-basis: 50%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	height: 200px;
+	width: auto;
+	max-width: 90vw;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .slideshowContainer{
+	margin: 0;
+	z-index: 1;
+	flex: 1;
+}
+
+
+.wrapper .slideshowContainer .slide{
+	position: relative;
+	margin: auto;
+}
+
+.pontos{
+	position: relative;
+	right: 15px;
+	top: -70px;
+}
+.dot{
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 10 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+	z-index: 0;
+}
+.dot:hover{
+	background-color: #717171;
+}
+
+
+
+section .titulo{
+	color: #088BA4;
+	font-family: arial;
+	text-align: center;
+}
+
+#produtos-content, #bestSellingProducts {
+	display: grid;
+	grid-template-columns: repeat(3, 33.33334%);
+	
+}
+
+.produto {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background-color: #fff;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.preco {
+  color: grey;
+  font-size: 22px;
+}
+
+.produto button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #088BA4;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+
+@media(max-width: 945px){
+	#produtos-content, #bestSellingProducts{
+		display: flex;
+		flex-direction: column;
+	}
+}
+footer{
+  background-color:#FDDCF1;
+  position: relative;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  padding-bottom: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  
+}
+footer a{
+  text-decoration: none;
+  color: #000;
+  font-size: 24px;
+}
+.blue{
+  color: blue;
+}
+.caixa{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+  margin-left: 30px;
+  margin-right: auto;
+  width: auto;
+
+}
+.blocoFooter{
+  margin-right: 30px;
+  color:  #000000;
+
+}
+.blocoFooter a{
+	color: #000000;
+}
+
+.paginaProduto {
+	display: flex;
+	background-color: #fff;
+	flex-direction: row;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.paginaProduto button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+}
+
+.paginaProduto button:hover {
+	opacity: 0.7;
+  }
+
+.paginaProduto #imagemProduto {
+	width: 30%;
+}
+
+.paginaProduto #infoProduto {
+	display: flex;
+	width: 50%;
+	flex-direction: column;
+	margin-left: 20%;
+	justify-content: space-around;
+	
+}
+
+.paginaProduto #numeros{
+	display: flex;
+	flex-direction: column;
+}
+
+@media(max-width: 945px){
+	.paginaProduto {
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+	}
+
+	.paginaProduto #imagemProduto {
+		width: 70%;
+		height: 100%;
+		justify-self: center;
+		align-self: center;
+	}
+}
+
+#blocoFormServicos {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#blocoFormServicos #formServicos {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoFormServicos button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+  }
+
+  #mudaPagina {
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+  }
+
+  #mudaPagina button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	margin: 1%;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	height: 5%;
+	font-size: 18px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  #mudaPagina #indicePagina {
+	  cursor: default;
+  }
+
+  #blocoLogin {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#formLogin {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+.loginButton {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	margin: 1%;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	height: 5%;
+	font-size: 18px;
+  }
+
+  #cadastroButton {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	align-self: center;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 49%;
+	height: 5%;
+	font-size: 18px;
+	margin-left: 25%;
+  }
+
+#esqueciButton{
+	text-decoration: none;
+	font-size: 12px;
+	color: blue;
+}
+#esqueciButton:hover{
+	opacity: 0.5;
+}
+
+#blocoLogin #formLogin{
+	width: 50%;
+	margin: auto;
+}
+
+#blocoCadastro {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+.formCadastro {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoCadastro button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	font-size: 18px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#blocoContato {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#formContato {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoContato button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	font-size: 18px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#formContato textarea {
+	resize: none;
+	height: 30vh;
+}
+
+#carrinho {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.blocoCarrinho {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: white;
+	margin: 2% 10% 2% 10%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	height: 2%;
+}
+
+.blocoCarrinho img {
+	margin: 2% 0% 2% 0%;
+	height: 15vh;
+}
+
+.blocoCarrinho h4 {
+	align-self: center;
+}
+
+.blocoCarrinho button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	align-self: center;
+	font-size: 18px;
+}
+
+#finalizarButton {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	align-self: center;
+	font-size: 18px;
+}
+
+#blocoPagamento {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#formPagamento {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoPagamento button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	font-size: 18px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#blocoAdmin {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#blocoAdmin .bd{
+	display: flex;
+	border-bottom: 2px solid #717171;
+	justify-content: space-between;
+	color: #088BA4;
+}
+
+#blocoAdmin .BlocoServico{
+	display: flex;
+	flex: 25% 10% 20% 45%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	margin: 2% 10% 2% 10%;
+	height: 2%;
+}
+
+#blocoAdmin .BlocoItem {
+	display: flex;
+	flex: 25% 10% 20% 45%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	margin: 2% 10% 2% 10%;
+	height: 2%;
+}
+
+#blocoAdmin .BlocoItem .adminCatalogo {
+	display:flex;
+	flex-direction: column;
+	max-width: 40%;
+}
+
+#blocoAdmin .BlocoItem img {
+	margin: 2% 0% 2% 0%;
+	height: 15vh;
+}
+
+#blocoAdmin .BlocoItem h4 {
+	align-self: center;
+}
+
+#blocoAdmin .BlocoItem button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	max-width: 100px;
+	align-self: center;
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+
+#blocoAdmin .BlocoUsuario {
+	display: flex;
+	flex: 25% 10% 20% 45%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	margin: 2% 10% 2% 10%;
+	height: 2%;
+}
+
+#blocoAdmin .BlocoUsuario .adminCatalogo {
+	display:flex;
+	flex-direction: column;
+	max-width: 40%;
+}
+
+#blocoAdmin .BlocoUsuario img {
+	margin: 2% 0% 2% 0%;
+	height: 15vh;
+}
+
+#blocoAdmin .BlocoUsuario h4 {
+	align-self: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	flex-basis: 15%;
+}
+
+#blocoAdmin .BlocoUsuario button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	max-width: 100px;
+	align-self: center;
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+
+.editButtonAdmin {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 100%;
+	max-width: 100px;
+	align-self: center;
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+
+#blocoVerUsuario {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#blocoVerUsuario h4{
+	color: #088BA4;
+}
+
+.editButtonUser {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	max-width: 100px;
+	align-self: center;
+	font-size: 15px;
+	margin-bottom: 3px;
+}
+
+#blocoCadastroEdit {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#formCadastroEdit {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoCadastroEdit button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	font-size: 18px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#blocoCadastroItem {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#formCadastroItem {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoCadastroItem button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	font-size: 18px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#blocoEditarItem {
+	display: flex;
+	background-color: #fff;
+	flex-direction: column;
+	margin: auto;
+	padding: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	justify-content: center;
+}
+
+#formEditarItem {
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding: 5%;
+}
+
+#blocoEditarItem button {
+	border: none;
+	outline: 0;
+	padding: 12px;
+	color: white;
+	background-color: #088BA4;
+	text-align: center;
+	cursor: pointer;
+	width: 30%;
+	font-size: 18px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+#descricao{
+	width:100%;
+	height: 100%;
+}

@@ -1,0 +1,73 @@
+Primeiro, você deve adequar sua máquina para rodar o servidor.
+
+Node:
+
+	Primeiro, instale o nodeJS e o npm na sua máquina conforme as instruções fornecidas pelo desenvolvedor.
+	Feito isso, navegue até essa pasta por meio do seu terminal ou console e utilize o comando "npm install", que instalará todos os packages necessários.
+
+CouchDB:
+
+	Primeiro, instale a CouchDB na sua máquina conforme as instruções fornecidas pelo desenvolvedor.
+	Feito isso, você deve criar uma couchDB com o nome "petshop" e deve criar os seguintes views e indexes utilizando o Fauxton (acessível em 127.0.0.1:5984):
+
+	1: products (deve estar disponível em http://user:password@127.0.0.1:5984/petshop/_design/products)
+		Design document: products
+		index name: all
+		map function: function (doc) {
+  
+				if (doc.type === "product")
+    
+					emit(doc._id, doc);
+
+				}
+		reduce: NONE
+
+	2: sales(deve estar disponível em http://user:password@127.0.0.1:5984/petshop/_design/sales)
+		Design document: sales
+		index name: all
+		map function: function (doc) {
+  
+				if (doc.type === "sale")
+    
+					emit(doc._id, doc);
+
+				}
+		reduce: NONE
+
+	3: services(deve estar disponível em http://user:password@127.0.0.1:5984/petshop/_design/services)
+		Design document: services
+		index name: all
+		map function: function (doc) {
+  
+				if (doc.type === "service")
+    
+					emit(doc._id, doc);
+
+				}
+		reduce: NONE
+
+	4: users(deve estar disponível em http://user:password@127.0.0.1:5984/petshop/_design/users)
+		Design document: users
+		index name: all
+		map function: function (doc) {
+  
+				if (doc.type === "user")
+    
+					emit(doc._id, doc);
+
+				}
+		reduce: NONE
+
+	Feitos os views, insira na database o seguinte JSON manualmente por meio do Fauxton:
+	{"type": "user",
+  "email": "admin",
+  "password": "admin",
+  "admin": true}
+	Esse será o usuário "admin", que terá acesso às funções de criação de novos produtos e deleção de produtos, usuários e serviços.
+
+Execução:
+
+	Tendo a database criada e os pacotes do node instalados, basta navegar até o diretório do programa e utilizar o comando "node index.js" 
+	(ou "nodemon index.js", dependendo da sua preferência) para iniciar o servidor.
+	O site estará acessível em 127.0.0.1:3000 (a porta 3000 será substituída pela porta do sistema, se essa tiver sido definida)
+

@@ -1,0 +1,21 @@
+Informação útil :
+	-É possível obter um produto pelo ID dele, fazendo uma requisição como a feita no método renderProductPage, da get-methods.js
+
+TODO:
+-Remoção de produtos, usuários e serviços na página de admin (editar dane-se mesmo)
+
+	-Coloca as parada na delete-methods.js
+	-Pra chamar o método, taca uns listener na classe removeButtonAdmin e pa, pega o id do ev.target.parent.parent (não lembro se é parent
+	que escreve, mas é real só pegar o parent do parent e o id disso que dá bom pra pegar o ID do que você quer remover, e tendo esse ID, só
+	remover da DB e tá tudo top, o que importa é pegar o elemento pai do elemento pai do removeButtonAdmin, jquery deve fazer isso facinho)
+
+-Carrinho (adaptar indexedDB, renderizar o carrinho na section da classe content adequada e usar a changeContent)
+
+	Eu recomendaria colocar o produto no carrrinho obtendo o JSON dele pelo ID, com a req do renderProductPage lá (na real,
+	a função toda de colocar no carrinho pode ser beeem parecida com a renderProductPage em vários aspectos, dá uma olhada)
+	Lembra de zerar a indexedDB quando fechar a página
+
+-Envio de compras
+ (se rolar de atualizar o valor de unidades disponíveis e vendidas seria top, até pq listagem dos mais vendidos e tal)
+
+-Renderizar compras na página de admin (cria um componente nos moldes dos outros, suavíssimo de fazer)
