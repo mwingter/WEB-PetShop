@@ -8,7 +8,7 @@ a:hover {
 	cursor: pointer;
 }
 header{
-	background-color: #FDDCF1;
+	background-color: #fcc206;
 	position: relative;
 	width: 100%;
 	z-index: 1000;
@@ -24,7 +24,7 @@ header .container{
 }
 header img{
 	flex-basis: 50%;
-	height: 160px;
+	height: 200px;
 	width: auto;
 }
 header .container .form{
@@ -278,7 +278,8 @@ button:hover {
 	}
 }
 footer{
-  background-color:#FDDCF1;
+  background-color: rgb(255, 182, 45);
+  font-weight: bold;
   position: relative;
   bottom: 0;
   left:0;
@@ -287,7 +288,7 @@ footer{
   z-index: 1;
   padding-bottom: 100px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
+  font-size: 20px;
   
 }
 footer a{
@@ -307,6 +308,10 @@ footer a{
   width: auto;
 
 }
+#grupo{
+	list-style: none;	
+}
+
 .blocoFooter{
   margin-right: 30px;
   color:  #000000;
