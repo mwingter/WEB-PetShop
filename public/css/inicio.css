@@ -1,5 +1,5 @@
 body{
-	background-color: #dbf9ff;
+	
 	top: 0;
 
 }
@@ -8,7 +8,7 @@ a:hover {
 	cursor: pointer;
 }
 header{
-	background-color: #FDDCF1;
+	background-color: #ffbe0a;;
 	position: relative;
 	width: 100%;
 	z-index: 1000;
@@ -42,6 +42,12 @@ header .container #busca{
 
 header .container .form button{
 	margin: 0;
+	height: 50px;
+	width: 50px;
+}
+
+#search{
+	padding: 23px;
 }
 
 header .container .minimenu{
@@ -186,7 +192,7 @@ section{
 	display: flex;
 	justify-content: center;
 	margin: auto;
-	height: 200px;
+	height: 300px;
 	width: auto;
 	max-width: 90vw;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -214,7 +220,7 @@ section{
 	height: 15px;
 	width: 15px;
 	margin: 10 2px;
-	background-color: #bbb;
+	background-color: rgb(255, 255, 255);
 	border-radius: 50%;
 	display: inline-block;
 	transition: background-color 0.6s ease;
@@ -230,6 +236,7 @@ section .titulo{
 	color: #088BA4;
 	font-family: arial;
 	text-align: center;
+	font-size: xx-large;
 }
 
 #produtos-content, #bestSellingProducts {
@@ -278,7 +285,7 @@ button:hover {
 	}
 }
 footer{
-  background-color:#FDDCF1;
+  background-color:#f5b400;
   position: relative;
   bottom: 0;
   left:0;
@@ -305,15 +312,21 @@ footer a{
   margin-left: 30px;
   margin-right: auto;
   width: auto;
+  padding: 30px;
 
 }
 .blocoFooter{
   margin-right: 30px;
   color:  #000000;
-
+  font-size: larger;
+  list-style: none;
 }
 .blocoFooter a{
 	color: #000000;
+}
+
+.blocoFooterInscrever{
+	padding-top: 30px;
 }
 
 .paginaProduto {
@@ -447,6 +460,7 @@ footer a{
 	margin-left: 10%;
 	margin-right: 10%;
 	padding: 5%;
+	align-items: center;
 }
 
 .loginButton {
@@ -459,6 +473,7 @@ footer a{
 	text-align: center;
 	cursor: pointer;
 	height: 5%;
+	width: 200px;
 	font-size: 18px;
   }
 
@@ -467,15 +482,21 @@ footer a{
 	outline: 0;
 	padding: 12px;
 	align-self: center;
-	color: white;
-	background-color: #088BA4;
+	color: rgb(0, 0, 0);
+	background-color: #9eb2b6;
 	text-align: center;
 	cursor: pointer;
-	width: 49%;
+	width: 200px;
 	height: 5%;
 	font-size: 18px;
-	margin-left: 25%;
+	
   }
+
+.inputForm{
+	padding: 20px;
+	width: 500px;
+	font-size: large;
+}
 
 #esqueciButton{
 	text-decoration: none;
@@ -500,6 +521,7 @@ footer a{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	max-width: 500px;
 	justify-content: center;
+	align-items: center;
 }
 
 .formCadastro {

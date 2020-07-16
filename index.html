@@ -10,7 +10,7 @@
 	<title>Pet Shop Aunimal</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel = "shortcut icon" type = "image/x-icon" href = "img/favicon.ico"/>
+	<link rel = "shortcut icon" type = "image/x-icon" href = "img/favicon.png"/>
 	<link type="text/css" rel = "stylesheet" href = "./css/inicio.css"/>
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,9 +23,9 @@
 <body>
 	<header>
 		<div class="container">
-			<img src="img/logo1.png"></img>
+			<img src="img/aunimal-semfundo.png"></img>
 			<form class="form" id="searchForm">
-				<input type="text" name="queryString" id="search" placeholder="Fa&ccedil;a buscas em nosso site!">
+				<input type="text" name="queryString" id="search" placeholder="Buscar...">
 				<button type="submit"><i class="fa fa-search"></i></button>		
 			</form>
 			<div class="minimenu">
@@ -69,22 +69,22 @@
 	<section class="content" id="cadastro-content" style="display: none">
 		<div id="blocoCadastro">
 			<form class="formCadastro" id="formCadastro" method="POST">
-				<h3 class="titulo"> <i class="fa fa-paw"></i> Cadastro <i class="fa fa-paw"></i></h3>
-				<input type="email" name="email" placeholder="Insira seu Email" required>
+				<h3 class="titulo"> <i class="fa fa-paw"></i> CADASTRO <i class="fa fa-paw"></i></h3>
+				<input class="inputForm" type="email" name="email" placeholder="Insira seu Email" required>
                 <br>
-                <input type="text" name="name" placeholder="Insira seu nome completo" required>
+                <input class="inputForm" type="text" name="name" placeholder="Insira seu nome completo" required>
                 <br>
-                <input type="text" name="adress" placeholder="Insira seu endere&ccedil;o" required>
+                <input class="inputForm" type="text" name="adress" placeholder="Insira seu endere&ccedil;o" required>
                 <br> 
-                <input type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" required>
+                <input class="inputForm" type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" required>
                 <br> 
-				<input type="password" name="password" placeholder="Insira sua senha" required>
+				<input class="inputForm" type="password" name="password" placeholder="Insira sua senha" required>
 				<br> 
-				<input type="password" name="passwordConfirm" placeholder="Confirme sua senha" required>
+				<input class="inputForm" type="password" name="passwordConfirm" placeholder="Confirme sua senha" required>
 				<br>
-				<h3 class="titulo">Foto :</h3> 
+				<h3 class="tit">Foto :</h3> 
 				<input type="file" name="img" src="/images/usuario.png" placeholder="Escolha uma imagem" required>
-				<br>
+				<br><br>
 				<input name="type" value="user" style="display: none;">
 				<button class="loginButton">Fazer cadastro</button>
 			</form>
@@ -130,23 +130,23 @@
 		<div class = wrapper>
 			<div class="slideshowContainer">
 				<div class="slide">
-						<img class="image" src="img/promocao1.png">
+						<img class="image" src="img/banners/banner2.png">
 				</div>
-					<div class="slide">
-							<img class="image" src="img/promocao2.png">
-					</div>
-					<div class="slide">
-						<img class="image" src="img/promocao3.png">
-					</div>
-					<div style="text-align: center" class="pontos">
-						<br>
-						<br>
-						<br>
-						<span class="dot" onclick="currentSlide(1)"></span>
-						<span class="dot" onclick="currentSlide(2)"></span>
-						<span class="dot" onclick="currentSlide(3)"></span>
-					</div>
-					<script>
+				<div class="slide">
+						<img class="image" src="img/banners/banner1.png">
+				</div>
+				<div class="slide">
+						<img class="image" src="img/banners/banner3.png">
+				</div>
+				<div style="text-align: center" class="pontos">
+					<br>
+					<br>
+					
+					<span class="dot" onclick="currentSlide(1)"></span> &nbsp;
+					<span class="dot" onclick="currentSlide(2)"></span> &nbsp;
+					<span class="dot" onclick="currentSlide(3)"></span> &nbsp;
+				</div>
+				<script>
 						var slideIndex = 1;
 						showSlides(slideIndex);
 
@@ -176,7 +176,7 @@
 				</script>
 			</div>
 		</div>
-		<h1 class="titulo"> <i class="fa fa-paw"></i> Itens mais vendidos  <i class="fa fa-paw"></i></h1>
+		<h1 class="titulo"> <i class="fa fa-paw"></i> ITENS MAIS VENDIDOS <i class="fa fa-paw"></i></h1>
 		<div class="produtos" id="bestSellingProducts">
 		
 		</div>
@@ -188,15 +188,17 @@
 	<section class="content" id="login-content" style="display: none;">
 		<div id="blocoLogin">
 			<form id="formLogin" method="POST">
-				<h3 class="titulo"> <i class="fa fa-paw"></i> Login <i class="fa fa-paw"></i></h3>
-				<input name="email" type="text" placeholder="Insira seu email" name="text" required>
+				<h3 class="titulo"> <i class="fa fa-paw"></i> LOGIN <i class="fa fa-paw"></i></h3>
+				<input class="inputForm" name="email" type="text" placeholder="Insira seu email" name="text" required>
 				<br>
-				<input name="password" type="password" placeholder="Insira sua senha" name="senha" required>
+				<input class="inputForm" name="password" type="password" placeholder="Insira sua senha" name="senha" required>
 				<input name="type" value="login" style="display: none;">
+				<br>
 				<button class="loginButton">Fazer login</button>
+				<br>
+				<a href="#cadastro" onclick='changeContent("cadastro-content")'><button id="cadastroButton">Fazer cadastro</button></a>
 			</form>
 			
-			<a href="#cadastro" onclick='changeContent("cadastro-content")'><button id="cadastroButton">Fazer cadastro</button></a>
 		</div>
 	</section>
 
@@ -294,7 +296,8 @@
 	            </p>
 	    </div>
 	    </nav>
-	    </div>
+		</div>
+		
 	        <div class="blocoFooterInscrever">
 	          <div class="increver">
 	            <p style="font-weight: bold;">Inscreva-se no nosso site para promo&ccedil;&otilde;es exclusivas!</p>
