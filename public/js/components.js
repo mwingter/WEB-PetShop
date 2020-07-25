@@ -50,13 +50,13 @@ class userPage extends HTMLElement {
         <div id="blocoCadastro">
         <form class="formCadastro" id="formEditarUsuario" method="none">
             <h3 class="titulo"> <i class="fa fa-paw"></i> Usu&aacute;rio <i class="fa fa-paw"></i></h3>
-            <input class="inputForm" type="email" name="email" placeholder="Insira seu Email" value="${user.email}" required>
+            <input type="email" name="email" placeholder="Insira seu Email" value="${user.email}" required>
             <br>
-            <input class="inputForm" type="text" name="name" placeholder="Insira seu nome completo" value="${user.name}" required>
+            <input type="text" name="name" placeholder="Insira seu nome completo" value="${user.name}" required>
             <br>
-            <input class="inputForm" type="text" name="adress" placeholder="Insira seu endere&ccedil;o" value="${user.adress}" required>
+            <input type="text" name="adress" placeholder="Insira seu endere&ccedil;o" value="${user.adress}" required>
             <br> 
-            <input class="inputForm" type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" value="${user.phone}" required>
+            <input type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" value="${user.phone}" required>
             <br>
             <h3 class="titulo">Foto :</h3> 
             <img src="img/imgNotFound.jpg">
