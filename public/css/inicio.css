@@ -1,3 +1,7 @@
+*{
+	
+	font-family: sylfaen;
+}
 body{
 	
 	top: 0;
@@ -65,13 +69,13 @@ header .container .minimenu i{
 	justify-content: center;
 	padding-left:5px;
 	padding-right: 5px;
-	border-right: 1px solid #e6dce5;
 	height: 50px;
 	color: #088BA4;
 }
 
 header .container .minimenu i:hover{
 	background-color: #2196f3;
+	color: #fff;
 }
 
 header .container .minimenu a{
@@ -234,7 +238,7 @@ section{
 
 section .titulo{
 	color: #088BA4;
-	font-family: arial;
+	font-family: sylfaen;
 	text-align: center;
 	font-size: xx-large;
 }
@@ -250,7 +254,7 @@ section .titulo{
   max-width: 300px;
   margin: auto;
   text-align: center;
-  font-family: arial;
+  font-family: sylfaen;
   background-color: #fff;
   margin-top: 2%;
   margin-bottom: 2%;
@@ -923,4 +927,8 @@ footer a{
 #descricao{
 	width:100%;
 	height: 100%;
+}
+
+.fa-user {
+	border-right: 1px solid #e6dce5;
 }
