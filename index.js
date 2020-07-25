@@ -165,7 +165,7 @@ app.post('/', function(req, res, next){
     if (!isEmpty(files)){ //Arquivo recebido: realizar upload
       let oldpath = files.img.path;
       let newpath = __dirname + '/public/uploads/' + files.img.name;
-      path = '/uploads/' + files.img.name;
+      path = 'public/uploads/' + files.img.name;
       fs.rename(oldpath, newpath, function (err) {
         if (err) throw err;
       });
