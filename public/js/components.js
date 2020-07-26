@@ -48,22 +48,22 @@ class userPage extends HTMLElement {
     set user(user){
         this.innerHTML = `
         <div id="blocoCadastro">
-        <form class="formCadastro" id="formEditarUsuario" method="none">
-            <h3 class="titulo"> <i class="fa fa-paw"></i> Usu&aacute;rio <i class="fa fa-paw"></i></h3>
-            <input type="email" name="email" placeholder="Insira seu Email" value="${user.email}" required>
-            <br>
-            <input type="text" name="name" placeholder="Insira seu nome completo" value="${user.name}" required>
-            <br>
-            <input type="text" name="adress" placeholder="Insira seu endere&ccedil;o" value="${user.adress}" required>
-            <br> 
-            <input type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" value="${user.phone}" required>
-            <br>
-            <h3 class="titulo">Foto :</h3> 
-            <img src="${user.img}">
-            <br>
-        </form>
-        <button class="loginButton" onclick="logout()">Sair</button>
-    </div>
+            <form class="formCadastro" id="formEditarUsuario" method="none">
+                <h3 class="titulo"> <i class="fa fa-paw"></i> Usu&aacute;rio <i class="fa fa-paw"></i></h3>
+                <input type="email" name="email" placeholder="Insira seu Email" value="${user.email}" required>
+                <br>
+                <input type="text" name="name" placeholder="Insira seu nome completo" value="${user.name}" required>
+                <br>
+                <input type="text" name="adress" placeholder="Insira seu endere&ccedil;o" value="${user.adress}" required>
+                <br> 
+                <input type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" value="${user.phone}" required>
+                <br>
+                <h3 class="titulo">Foto :</h3> 
+                <img src="${user.img}" width="500">
+                <br>
+            </form>
+            <button class="loginButton" onclick="logout()">Sair</button>
+        </div>
         `;
     }
 }
