@@ -59,7 +59,7 @@ class userPage extends HTMLElement {
             <input type="text" name="phone" placeholder="Insira seu n&uacute;mero de telefone (Formato (xx) xxxxx-xxxx)" value="${user.phone}" required>
             <br>
             <h3 class="titulo">Foto :</h3> 
-            <img src="img/imgNotFound.jpg">
+            <img src="${user.img}">
             <br>
         </form>
         <button class="loginButton" onclick="logout()">Sair</button>
