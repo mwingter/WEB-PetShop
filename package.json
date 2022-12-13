@@ -11,7 +11,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "form-data": "^3.0.0",
     "formidable": "^1.2.1",
     "node-couchdb": "^1.3.0"
